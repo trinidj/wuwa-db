@@ -8,8 +8,7 @@
       "weaponType": "Broadblade",
       "description": "...",
       "imageUrl": "/assets/resonators/Calcharo/Calcharo.png",
-      "attributeUrl": "/assets/attributes/Electro.png",
-      "spriteUrl": "/assets/resonators/Calcharo/sprite.png"
+      "attributeUrl": "/assets/attributes/Electro.png"
     },
     {
       "id": "verina",

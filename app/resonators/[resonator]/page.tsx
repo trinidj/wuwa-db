@@ -1,3 +1,5 @@
+import resonatorsData from "@/app/data/resonators.json"
+
 import {
   Card,
   CardHeader,
@@ -5,7 +7,7 @@ import {
   CardDescription,
   CardContent
 } from "@/components/ui/card"
-import resonatorsData from "@/app/data/resonators.json"
+import Image from "next/image"
 
 export default async function ResonatorDetails({
   params,
@@ -23,28 +25,27 @@ export default async function ResonatorDetails({
 
   return (
     <>
-      <header>
-        <Card className="w-fit">
-          <CardHeader className="flex items-center">
-            <img 
-              alt="Electro"
-              src={resonator.attributeUrl}
-            />
-            <div className="flex flex-col">
-              <CardTitle className="text-xl">{resonator.name}</CardTitle>
-              <CardDescription>{resonator.attribute}</CardDescription>
-            </div>
-            
-          </CardHeader>
-          <CardContent className="p-0">
-            <img
-              alt="Sprite"
-              src={resonator.spriteUrl}
-              className="w-lg"
-            />
-          </CardContent>
-        </Card>
+      <header className="flex items-center gap-6">
+        <div>
+          <Image
+            alt={resonator.attribute}
+            src={resonator.attributeUrl}
+            width={500}
+            height={500}
+            className="size-16"
+            quality={500}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <h1 className="font-bold text-4xl">{resonator.name}</h1>
+          <p className="text-muted-foreground text-lg">{resonator.attribute} {resonator.weaponType}</p>
+        </div>
       </header>
+
+      <main>
+
+      </main>
     </>
   )
 }

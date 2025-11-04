@@ -54,13 +54,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
                 <div className="flex items-center gap-2 px-4">
                   <ModeToggle />
-
-                  <Button size="icon"  variant="default" className="group cursor-pointer">
-                    <Settings
-                      size={40}
-                      className="transition-transform duration-300 group-hover:rotate-90"
-                    />
-                  </Button>
                 </div>
               </header>
 

@@ -33,6 +33,8 @@ import { FieldGroup, FieldSet, Field, FieldLabel } from "@/components/ui/field"
 import Link from "next/link"
 import resonatorsData from "@/app/data/resonators.json"
 
+import Image from "next/image"
+
 export default function ResonatorsPage() {
   const getRarityGradient = (rarity: number) => {
     if (rarity === 5) {
@@ -46,7 +48,7 @@ export default function ResonatorsPage() {
       <header className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-4xl">Resonators</h1>
-          <p className="text-muted-foreground text-base">Browse all playable characters in Wuthering Waves with their stats, abilities, and element types.</p>
+          <p className="text-muted-foreground text-lg">Browse all playable characters in Wuthering Waves with their stats, abilities, and element types.</p>
         </div>
 
         <div className="flex gap-2">
@@ -105,28 +107,30 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-8 gap-4">
+      <main className="grid grid-cols-9 gap-4">
         {resonatorsData.resonators.map((resonator) => (
           <Link
             href={`/resonators/${resonator.name}`} key={resonator.id}
           >
             <Card
               className={
-                `transition-transform duration-200 hover:scale-105 will-change-transform p-0 gap-0 border-0 overflow-hidden ${getRarityGradient(resonator.rarity)}`
+                `transition-transform rounded-lg duration-200 hover:scale-105 will-change-transform p-0 gap-0 border-0 overflow-hidden ${getRarityGradient(resonator.rarity)}`
               }
             >
               <div className="absolute right-1 top-1 z-10">
-                <img
+                <Image
                   alt="Attribute"
+                  width={32}
+                  height={32}
                   src={resonator.attributeUrl}
                 />
               </div>
               <img
                 alt="Resonator"
                 src={resonator.imageUrl}
-                className="object-contain w-full h-full"
+                className="object-contain w-full h-full transition-transform duration-200 hover:scale-110"
               />
-              <div className="bg-sidebar px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2">
+              <div className="bg-sidebar/73 px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2">
                 <CardTitle className="text-sm">{resonator.name}</CardTitle>
               </div>
             </Card>

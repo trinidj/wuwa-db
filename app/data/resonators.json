@@ -8,7 +8,8 @@
       "weaponType": "Broadblade",
       "description": "...",
       "imageUrl": "/assets/resonators/Calcharo/Calcharo.png",
-      "attributeUrl": "/assets/attributes/Electro.png"
+      "attributeUrl": "/assets/attributes/Electro.png",
+      "spriteUrl": "/assets/resonators/Calcharo/sprite.png"
     },
     {
       "id": "verina",
@@ -18,7 +19,8 @@
       "weaponType": "Rectifier",
       "description": "...",
       "imageUrl": "/assets/resonators/Verina/Verina.png",
-      "attributeUrl": "/assets/attributes/Spectro.png"
+      "attributeUrl": "/assets/attributes/Spectro.png",
+      "spriteUrl": "/assets/resonators/Verina/sprite.png"
     },
     {
       "id": "jianxin",
@@ -28,7 +30,8 @@
       "weaponType": "Gauntlet",
       "description": "...",
       "imageUrl": "/assets/resonators/Jianxin/Jianxin.png",
-      "attributeUrl": "/assets/attributes/Aero.png"
+      "attributeUrl": "/assets/attributes/Aero.png",
+      "spriteUrl": "/assets/resonators/Jianxin/sprite.png"
     }
   ]
 }

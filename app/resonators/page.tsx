@@ -107,7 +107,7 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-9 gap-4">
+      <main className="grid grid-cols-8 gap-4">
         {resonatorsData.resonators.map((resonator) => (
           <Link
             href={`/resonators/${resonator.name}`} key={resonator.id}

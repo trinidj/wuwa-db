@@ -55,9 +55,9 @@
       "attribute": "Fusion",
       "weaponType": "Pistol",
       "description": "...",
-      "imageUrl": "/assets/resonators/Jianxin/Chixia.png",
+      "imageUrl": "/assets/resonators/Chixia/Chixia.png",
       "attributeUrl": "/assets/attributes/Fusion.png",
-      "spriteUrl": "/assets/resonators/Jianxin/sprite.png"
+      "spriteUrl": "/assets/resonators/Chixia/sprite.png"
     }
   ]
 }

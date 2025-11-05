@@ -57,7 +57,22 @@
       "description": "...",
       "imageUrl": "/assets/resonators/Chixia/Chixia.png",
       "attributeUrl": "/assets/attributes/Fusion.png",
-      "spriteUrl": "/assets/resonators/Chixia/sprite.png"
+      "spriteUrl": "/assets/resonators/Chixia/sprite.png",
+      "HP": {
+        "title": "HP",
+        "min": 727,
+        "max": 9088
+      },
+      "ATK": {
+        "title": "ATK",
+        "min": 24,
+        "max": 300
+      },
+      "DEF": {
+        "title": "DEF",
+        "min": 78,
+        "max": 953
+      }
     }
   ]
 }

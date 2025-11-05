@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Filter, Search } from "lucide-react"
 
@@ -36,6 +37,58 @@ import resonatorsData from "@/app/data/resonators.json"
 import Image from "next/image"
 
 export default function ResonatorsPage() {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedAttributes, setSelectedAttributes] = useState<string[]>([])
+  const [selectedWeaponTypes, setSelectedWeaponTypes] = useState<string[]>([])
+  const [selectedRarities, setSelectedRarities] = useState<string[]>([])
+  const [isFilterOpen, setIsFilterOpen] = useState(false)
+
+  // Temporary filter states (before saving)
+  const [tempAttributes, setTempAttributes] = useState<string[]>([])
+  const [tempWeaponTypes, setTempWeaponTypes] = useState<string[]>([])
+  const [tempRarities, setTempRarities] = useState<string[]>([])
+
+  // Filter resonators based on search query and filters
+  const filteredResonators = resonatorsData.resonators.filter((resonator) => {
+    const searchLower = searchQuery.toLowerCase()
+    const matchesSearch = resonator.name.toLowerCase().includes(searchLower)
+
+    const matchesAttribute = selectedAttributes.length === 0 ||
+      selectedAttributes.includes(resonator.attribute.toLowerCase())
+
+    const matchesWeapon = selectedWeaponTypes.length === 0 ||
+      selectedWeaponTypes.includes(resonator.weaponType.toLowerCase())
+
+    const matchesRarity = selectedRarities.length === 0 ||
+      selectedRarities.includes(resonator.rarity.toString())
+
+    return matchesSearch && matchesAttribute && matchesWeapon && matchesRarity
+  })
+
+  const handleSaveFilters = () => {
+    setSelectedAttributes(tempAttributes)
+    setSelectedWeaponTypes(tempWeaponTypes)
+    setSelectedRarities(tempRarities)
+    setIsFilterOpen(false)
+  }
+
+  const handleCancelFilters = () => {
+    setTempAttributes(selectedAttributes)
+    setTempWeaponTypes(selectedWeaponTypes)
+    setTempRarities(selectedRarities)
+    setIsFilterOpen(false)
+  }
+
+  const handleOpenChange = (open: boolean) => {
+    if (open) {
+      // When opening, set temp values to current values
+      setTempAttributes(selectedAttributes)
+      setTempWeaponTypes(selectedWeaponTypes)
+      setTempRarities(selectedRarities)
+    }
+    setIsFilterOpen(open)
+  }
+
   const getRarityGradient = (rarity: number) => {
     if (rarity === 5) {
       return 'bg-gradient-to-t from-rarity-5'
@@ -53,12 +106,16 @@ export default function ResonatorsPage() {
 
         <div className="flex gap-2">
           <InputGroup>
-            <InputGroupInput placeholder="Search Resonator..." />
+            <InputGroupInput
+              placeholder="Search Resonator..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <InputGroupAddon>
               <Search />
             </InputGroupAddon>
           </InputGroup>
-          <Dialog>
+          <Dialog open={isFilterOpen} onOpenChange={handleOpenChange}>
             <DialogTrigger asChild>
               <Button size="icon" className="cursor-pointer">
                 <Filter />
@@ -77,12 +134,30 @@ export default function ResonatorsPage() {
                   <FieldGroup>
                     <Field>
                       <FieldLabel>Rarity</FieldLabel>
-      
+                      <ToggleGroup
+                        type="multiple"
+                        variant="outline"
+                        value={tempRarities}
+                        onValueChange={setTempRarities}
+                      >
+                        <ToggleGroupItem value="5">
+                          5★
+                        </ToggleGroupItem>
+                        <ToggleGroupItem value="4">
+                          4★
+                        </ToggleGroupItem>
+                      </ToggleGroup>
                     </Field>
 
                     <Field>
                       <FieldLabel>Attribute</FieldLabel>
-                      <ToggleGroup type="multiple" variant="outline" className="cursor-pointer">
+                      <ToggleGroup
+                        type="multiple"
+                        variant="outline"
+                        className="cursor-pointer"
+                        value={tempAttributes}
+                        onValueChange={setTempAttributes}
+                      >
                         <ToggleGroupItem
                           value="aero"
                         >
@@ -142,14 +217,70 @@ export default function ResonatorsPage() {
 
                     <Field>
                       <FieldLabel>Weapon Type</FieldLabel>
-
+                      <ToggleGroup
+                        type="multiple"
+                        variant="outline"
+                        value={tempWeaponTypes}
+                        onValueChange={setTempWeaponTypes}
+                      >
+                        <ToggleGroupItem
+                          value="broadblade"
+                        >
+                          <img
+                            alt="Broadblade"
+                            src="/assets/weapons/Broadblade_icon.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="pistol"
+                        >
+                          <img
+                            alt="Pistol"
+                            src="/assets/weapons/Pistols_Icon.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="rectifier"
+                        >
+                          <img
+                            alt="Rectifier"
+                            src="/assets/weapons/Rectifier_Icon.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="gauntlet"
+                        >
+                          <img
+                            alt="Gauntlet"
+                            src="/assets/weapons/Gauntlets_Icon.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                      </ToggleGroup>
                     </Field>
                   </FieldGroup> 
                 </FieldSet>
               </form>
 
               <DialogFooter>
-
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="cursor-pointer"
+                  onClick={handleCancelFilters}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="button"
+                  className="cursor-pointer"
+                  onClick={handleSaveFilters}
+                >
+                  Save
+                </Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -157,7 +288,7 @@ export default function ResonatorsPage() {
       </header>
 
       <main className="grid grid-cols-8 gap-4">
-        {resonatorsData.resonators.map((resonator) => (
+        {filteredResonators.map((resonator) => (
           <Link
             href={`/resonators/${resonator.name}`} key={resonator.id}
           >

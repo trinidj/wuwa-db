@@ -49,19 +49,21 @@ export default function LevelSlider({ resonator }: { resonator: ResonatorStats }
   }, [level, resonator.DEF])
 
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex justify-between">
-        <span>Level</span>
-        <span>{level[0]}</span>
-      </div>
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-3">
+        <div className="flex justify-between">
+          <span>Level</span>
+          <span>{level[0]}</span>
+        </div>
 
-      <Slider
-        value={level}
-        onValueChange={setLevel}
-        min={1}
-        max={90}
-        step={1}
-      />
+        <Slider
+          value={level}
+          onValueChange={setLevel}
+          min={1}
+          max={90}
+          step={1}
+        />
+      </div>
 
       <Table>
         <TableBody>

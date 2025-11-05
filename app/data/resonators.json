@@ -9,7 +9,22 @@
       "description": "...",
       "imageUrl": "/assets/resonators/Calcharo/Calcharo.png",
       "attributeUrl": "/assets/attributes/Electro.png",
-      "spriteUrl": "/assets/resonators/Calcharo/sprite.png"
+      "spriteUrl": "/assets/resonators/Calcharo/sprite.png",
+      "HP": {
+        "title": "HP",
+        "min": 840,
+        "max": 10500
+      },
+      "ATK": {
+        "title": "ATK",
+        "min": 35,
+        "max": 438
+      },
+      "DEF": {
+        "title": "DEF",
+        "min": 97,
+        "max": 1186
+      }
     },
     {
       "id": "verina",
@@ -31,6 +46,17 @@
       "description": "...",
       "imageUrl": "/assets/resonators/Jianxin/Jianxin.png",
       "attributeUrl": "/assets/attributes/Aero.png",
+      "spriteUrl": "/assets/resonators/Jianxin/sprite.png"
+    },
+    {
+      "id": "chixia",
+      "name": "Chixia",
+      "rarity": 4,
+      "attribute": "Fusion",
+      "weaponType": "Pistol",
+      "description": "...",
+      "imageUrl": "/assets/resonators/Jianxin/Chixia.png",
+      "attributeUrl": "/assets/attributes/Fusion.png",
       "spriteUrl": "/assets/resonators/Jianxin/sprite.png"
     }
   ]

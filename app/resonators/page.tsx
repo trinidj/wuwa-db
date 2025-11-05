@@ -77,18 +77,67 @@ export default function ResonatorsPage() {
                   <FieldGroup>
                     <Field>
                       <FieldLabel>Rarity</FieldLabel>
-                      <ToggleGroup type="multiple" variant="outline">
-                        <ToggleGroupItem
-                          value="4-star"
-                          size="lg"
-                        >
-                          <img src="/app/assets/attributes/Aero.jpg" />
-                        </ToggleGroupItem>
-                      </ToggleGroup>
+      
                     </Field>
 
                     <Field>
                       <FieldLabel>Attribute</FieldLabel>
+                      <ToggleGroup type="multiple" variant="outline" className="cursor-pointer">
+                        <ToggleGroupItem
+                          value="aero"
+                        >
+                          <img 
+                            alt="Aero"
+                            src="/assets/attributes/Aero.png" 
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="electro"
+                        >
+                          <img 
+                            alt="Electro"
+                            src="/assets/attributes/Electro.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="fusion"
+                        >
+                          <img 
+                            alt="Fusion"
+                            src="/assets/attributes/Fusion.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="glacio"
+                        >
+                          <img 
+                            alt="Glacio"
+                            src="/assets/attributes/Glacio.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="havoc"
+                        >
+                          <img 
+                            alt="Havoc"
+                            src="/assets/attributes/Havoc.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                        <ToggleGroupItem
+                          value="spectro"
+                        >
+                          <img 
+                            alt="Spectro"
+                            src="/assets/attributes/Spectro.png"
+                            width={32}
+                          />
+                        </ToggleGroupItem>
+                      </ToggleGroup>
                     </Field>
 
                     <Field>

@@ -1,13 +1,11 @@
 import resonatorsData from "@/app/data/resonators.json"
-import Link from "next/link"
-
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import LevelSlider from "./LevelSlider"
 
 import {
   Card,
   CardContent
 } from "@/components/ui/card"
-import Image from "next/image"
 
 export default async function ResonatorDetails({
   params,
@@ -23,43 +21,37 @@ export default async function ResonatorDetails({
     return <div>Resonator not found</div>
   }
 
-  const resonatorsProfileLinks = [
-    { title: 'Profile' },
-    { title: 'Ascension' }
-  ]
-
   return (
     <>
-      <section className="flex justify-between gap-6">
+      <section className="flex justify-between">
         <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <Image
-              alt={resonator.attribute}
-              src={resonator.attributeUrl}
-              width={500}
-              height={500}
-              className="size-16"
-            />
+          <div className="flex justify-between">
+            <div className="flex items-center gap-2">
+              <Image
+                alt={resonator.attribute}
+                src={resonator.attributeUrl}
+                width={500}
+                height={500}
+                className="size-16"
+              />
 
-            <div className="flex flex-col gap-2">
-              <h1 className="font-bold text-4xl">{resonator.name}</h1>
-              <p className="text-muted-foreground text-lg">{resonator.attribute} {resonator.weaponType}</p>
+              <div className="flex flex-col gap-1">
+                <h1 className="font-bold text-3xl">{resonator.name}</h1>
+                <p className="text-electro font-medium">{resonator.attribute}</p>
+              </div>
+            </div>
+
+            <div className="w-40 flex items-center">
+              <img
+                alt={`${resonator.rarity}-star`}
+                src={`/assets/rarity/${resonator.rarity}_star.png`}
+              />
             </div>
           </div>
 
-          <Card className="w-sm h-fit p-1">
-            <CardContent className="flex flex-col gap-1 p-1">
-              {resonatorsProfileLinks.map((link) => (
-                <Button 
-                  key={link.title} 
-                  variant="ghost"
-                  className="cursor-pointer justify-start"
-                >
-                  <Link href="" className="group">
-                    {link.title}
-                  </Link>
-                </Button>
-              ))}
+          <Card className="w-lg h-fit">
+            <CardContent className="flex flex-col gap-1">
+              <LevelSlider resonator={resonator} />
             </CardContent>
           </Card>
         </div>

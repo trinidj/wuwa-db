@@ -39,6 +39,7 @@
   --color-card: var(--card);
   --color-rarity-4: var(--rarity-4);
   --color-rarity-5: var(--rarity-5);
+  --color-electro: var(--electro);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -80,6 +81,9 @@
   --sidebar-ring: oklch(0.708 0 0);
   --rarity-4: oklch(0.501 0.171 314);
   --rarity-5: oklch(0.886 0.147 91.0);
+
+  /* Attribute Colours */
+  --electro: rgba(180, 107, 255);
 }
 
 .dark {
@@ -116,6 +120,9 @@
   --sidebar-ring: oklch(0.556 0 0);
   --rarity-4: oklch(0.501 0.171 314);
   --rarity-5: oklch(0.886 0.147 91.0);
+
+  /* Attribute Colours */
+  --electro: rgba(180, 107, 255);
 }
 
 @layer base {

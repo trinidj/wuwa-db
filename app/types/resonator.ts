@@ -7,6 +7,30 @@ export interface StatRange {
   max: number;
 }
 
+export interface AscensionMaterial {
+  name: string;
+  amount: number;
+  icon?: string;
+}
+
+export interface AscensionPhase {
+  level: string;
+  materials: AscensionMaterial[];
+}
+
+export interface TalentScaling {
+  level: number;
+  [key: string]: number; 
+}
+
+export interface Talent {
+  name: string;
+  type: string;
+  description: string;
+  icon?: string;
+  scaling?: TalentScaling[];
+}
+
 export interface Resonator {
   id: string;
   name: string;
@@ -19,6 +43,17 @@ export interface Resonator {
     atk: StatRange;
     def: StatRange;
   };
+  talents?: {
+    normalAttack?: Talent;
+    resonanceSkill?: Talent;
+    resonanceLiberation?: Talent;
+    forteCircuit?: Talent;
+    introSkill?: Talent;
+    outroSkill?: Talent;
+    inheritSkill1?: Talent;
+    inheritSkill2?: Talent;
+  };
+  ascension?: AscensionPhase[];
 }
 
 export interface ResonatorAssets {
@@ -46,6 +81,33 @@ export function getResonatorAssets(resonator: Resonator): ResonatorAssets {
     attribute: `/assets/attributes/${resonator.attribute}.png`,
     weaponType: `/assets/weapons/${weaponIconMap[resonator.weaponType]}`,
   };
+}
+
+export interface ResonatorSkillAssets {
+  normalAttack?: string;
+  resonanceSkill?: string;
+  resonanceLiberation?: string;
+  forteCircuit?: string;
+  inheritSkill1?: string;
+  inheritSkill2?: string;
+  introSkill?: string;
+  outroSkill?: string
+}
+
+/**
+ * Get all skill/talent asset URLs for a resonator based on naming conventions
+ */
+export function getResonatorSkillAssets(resonator: Resonator): ResonatorSkillAssets {
+  return {
+    normalAttack: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/normal_attack.png`,
+    resonanceSkill: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/resonance_skill.png`,
+    resonanceLiberation: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/resonance_liberation.png`,
+    forteCircuit: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/forte_circuit.png`,
+    inheritSkill1: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/inherit_skill_1.png`,
+    inheritSkill2: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/inherit_skill_2.png`,
+    introSkill: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/intro_skill.png`,
+    outroSkill: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/outro_skill.png`
+  }
 }
 
 /**

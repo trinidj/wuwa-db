@@ -55,7 +55,7 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
               />
               HP
             </TableCell>
-            <TableCell>{currentHP.toLocaleString()}</TableCell>
+            <TableCell className="font-medium">{currentHP.toLocaleString()}</TableCell>
           </TableRow>
 
           {/* ATK*/}
@@ -68,7 +68,7 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
               />
               ATK
             </TableCell>
-            <TableCell>{currentATK.toLocaleString()}</TableCell>
+            <TableCell className="font-medium">{currentATK.toLocaleString()}</TableCell>
           </TableRow>
 
           {/* DEF */}
@@ -81,7 +81,45 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
               />
               DEF
             </TableCell>
-            <TableCell>{currentDEF.toLocaleString()}</TableCell>
+            <TableCell className="font-medium">{currentDEF.toLocaleString()}</TableCell>
+          </TableRow>
+
+          {/* Energy Regen */}
+          <TableRow className="flex justify-between">
+            <TableCell className="flex items-center gap-2 font-bold">
+              <img
+                src="/assets/stats/stat_energy.png"
+                width={20}
+                alt="Energy Regen"
+              />
+              Energy Regen
+            </TableCell>
+            <TableCell className="font-medium">100%</TableCell>
+          </TableRow>
+
+          {/* Crit. Rate */}
+          <TableRow className="flex justify-between">
+            <TableCell className="flex items-center gap-2 font-bold">
+              <img
+                src="/assets/stats/stat_cr.png"
+                width={20}
+                alt="Crit. Rate"
+              />
+              Crit. Rate
+            </TableCell>
+            <TableCell className="font-medium">5%</TableCell>
+          </TableRow>
+
+          <TableRow className="flex justify-between">
+            <TableCell className="flex items-center gap-2 font-bold">
+              <img
+                src="/assets/stats/stat_cd.png"
+                width={20}
+                alt="Crit. DMG"
+              />
+              Crit. DMG
+            </TableCell>
+            <TableCell className="font-medium">150%</TableCell>
           </TableRow>
         </TableBody>
       </Table>

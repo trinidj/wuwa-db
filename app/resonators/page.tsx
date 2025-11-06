@@ -38,11 +38,11 @@ import {
 } from "@/components/ui/hover-card"
 
 import { FieldGroup, FieldSet, Field, FieldLabel } from "@/components/ui/field"
-import Link from "next/link"
 import resonatorsData from "@/app/data/resonators.json"
 import { Resonator, getResonatorAssets } from "@/app/types/resonator"
 
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ResonatorsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -106,13 +106,13 @@ export default function ResonatorsPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <header className="flex flex-col gap-6">
+      <header className="flex flex-col gap-4 sm:gap-6">
         <div className="flex flex-col gap-2">
-          <h1 className="font-bold text-4xl">Resonators</h1>
-          <p className="text-muted-foreground text-lg">Browse all playable characters in Wuthering Waves with their stats, abilities, and element types.</p>
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl">Resonators</h1>
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg">Browse all playable characters in Wuthering Waves with their stats, abilities, and element types.</p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-col sm:flex-row">
           <InputGroup>
             <InputGroupInput
               placeholder="Search Resonator..."
@@ -295,42 +295,46 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-8 gap-4">
+      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
         {filteredResonators.map((resonator) => {
           const assets = getResonatorAssets(resonator);
           return (
             <HoverCard key={resonator.id}>
-              <HoverCardTrigger
-                href={`/resonators/${resonator.name}`}
-              >
-                <Card
-                  className={
-                    `transition-transform rounded-lg duration-200 hover:scale-105 will-change-transform p-0 gap-0 border-0 overflow-hidden ${getRarityGradient(resonator.rarity)}`
-                  }
-                >
-                  <div className="absolute left-1 top-1 z-10">
+              <HoverCardTrigger asChild>
+                <Link href={`/resonators/${resonator.name}`}>
+                  <Card
+                    className={
+                      `transition-transform rounded-lg duration-200 hover:scale-105 will-change-transform p-0 gap-0 border-0 overflow-hidden ${getRarityGradient(resonator.rarity)}`
+                    }
+                  >
+                    <div className="absolute left-1 top-1 z-10">
+                      <Image
+                        alt="Attribute"
+                        width={32}
+                        height={32}
+                        src={assets.attribute}
+                      />
+                    </div>
                     <Image
-                      alt="Attribute"
-                      width={32}
-                      height={32}
-                      src={assets.attribute}
+                      alt={resonator.name}
+                      src={assets.image}
+                      width={200}
+                      height={200}
+                      className="object-contain w-full h-full transition-transform duration-200 hover:scale-110"
                     />
-                  </div>
-                  <img
-                    alt="Resonator"
-                    src={assets.image}
-                    className="object-contain w-full h-full transition-transform duration-200 hover:scale-110"
-                  />
-                  <div className="bg-sidebar/73 px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2">
-                    <CardTitle className="text-sm">{resonator.name}</CardTitle>
-                  </div>
-                </Card>
+                    <div className="bg-sidebar/73 px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2">
+                      <CardTitle className="text-sm">{resonator.name}</CardTitle>
+                    </div>
+                  </Card>
+                </Link>
               </HoverCardTrigger>
               <HoverCardContent side="top" className="w-fit">
                 <div className="flex items-center gap-4">
-                  <img
+                  <Image
                     src={assets.image}
+                    alt={resonator.name}
                     width={64}
+                    height={64}
                     className="rounded"
                   />
 
@@ -339,16 +343,20 @@ export default function ResonatorsPage() {
 
                     <div className="flex gap-2">
                       <Badge variant="outline" className="flex gap-2 text-sm">
-                        <img
+                        <Image
                           src={assets.attribute}
+                          alt={resonator.attribute}
                           width={20}
+                          height={20}
                         />
                         {resonator.attribute}
                       </Badge>
                       <Badge variant="outline" className="flex gap-2 text-sm">
-                        <img
+                        <Image
                           src={assets.weaponType}
+                          alt={resonator.weaponType}
                           width={20}
+                          height={20}
                         />
                         {resonator.weaponType}
                       </Badge>

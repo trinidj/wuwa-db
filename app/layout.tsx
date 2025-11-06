@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { Settings } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -57,7 +55,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 </div>
               </header>
 
-              <main className="py-20 px-80">
+              <main className="py-6 px-4 sm:py-12 sm:px-8 md:px-16 lg:px-32 xl:py-20 xl:px-80">
                 {children}
               </main>
             </SidebarInset>

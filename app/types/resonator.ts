@@ -48,6 +48,7 @@ export interface Resonator {
   rarity: Rarity;
   attribute: Attribute;
   weaponType: WeaponType;
+  isNew?: boolean;
   description: string;
   stats: {
     hp: StatRange;

@@ -247,10 +247,11 @@ export default function ResonatorsPage() {
                 <Link href={`/resonators/${resonator.name}`}>
                   <Card
                     className={
-                      `transition-transform rounded-lg duration-200 border-none hover:scale-105 will-change-transform p-0 gap-0 overflow-hidden ${getRarityGradient(resonator.rarity)}`
+                      `transition-transform rounded-lg duration-200 border-none hover:scale-105 will-change-transform p-0 gap-0 overflow-hidden transform-gpu ${getRarityGradient(resonator.rarity)}`
                     }
+                    style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
                   >
-                    <div className="absolute left-1 top-1 z-10">
+                    <div className="absolute left-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
                       <Image
                         alt="Attribute"
                         width={32}
@@ -258,12 +259,20 @@ export default function ResonatorsPage() {
                         src={assets.attribute}
                       />
                     </div>
+                    {resonator.isNew && (
+                      <div className="absolute right-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
+                        <Badge variant="destructive" className="text-white text-xs">
+                          New
+                        </Badge>
+                      </div>
+                    )}
                     <Image
                       alt={resonator.name}
                       src={assets.image}
                       width={200}
                       height={200}
-                      className="object-contain w-full h-full transition-transform duration-200 hover:scale-110"
+                      className="object-contain w-full h-full transition-transform duration-200 hover:scale-110 transform-gpu"
+                      style={{ backfaceVisibility: 'hidden' }}
                     />
                     <div
                       className="text-center w-3/4 px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2 backdrop-blur-2xl"

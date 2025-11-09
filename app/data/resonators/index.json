@@ -6,6 +6,7 @@
       "rarity": 5,
       "attribute": "Electro",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Magnetism Before Light",
       "stats": {
         "hp": { "min": 824, "max": 10300 },
@@ -19,6 +20,7 @@
       "rarity": 5,
       "attribute": "Fusion",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Flamebound Compass",
       "stats": {
         "hp": { "min": 934, "max": 11675 },
@@ -32,6 +34,7 @@
       "rarity": 5,
       "attribute": "Electro",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Phantom Hunter",
       "stats": {
         "hp": { "min": 840, "max": 10500 },
@@ -45,6 +48,7 @@
       "rarity": 5,
       "attribute": "Havoc",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Crimson Blossom",
       "stats": {
         "hp": { "min": 840, "max": 10325 },
@@ -58,6 +62,7 @@
       "rarity": 5,
       "attribute": "Havoc",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Sea of Dreams",
       "stats": {
         "hp": { "min": 928, "max": 11600 },
@@ -71,6 +76,7 @@
       "rarity": 5,
       "attribute": "Glacio",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Crystal Remorph",
       "stats": {
         "hp": { "min": 996, "max": 12450 },
@@ -84,6 +90,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Feathered Tempest",
       "stats": {
         "hp": { "min": 1184, "max": 14800 },
@@ -97,6 +104,7 @@
       "rarity": 5,
       "attribute": "Fusion",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Eternal Blaze",
       "stats": {
         "hp": { "min": 831, "max": 10388 },
@@ -110,6 +118,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Woven Melodies",
       "stats": {
         "hp": { "min": 979, "max": 12238 },
@@ -123,6 +132,7 @@
       "rarity": 5,
       "attribute": "Fusion",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Consultant from the Black Shores",
       "stats": {
         "hp": { "min": 841, "max": 10513 },
@@ -136,6 +146,7 @@
       "rarity": 5,
       "attribute": "Fusion",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Infernal Descent",
       "stats": {
         "hp": { "min": 824, "max": 10300 },
@@ -149,6 +160,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Stasis, Cycle, Renewal",
       "stats": {
         "hp": { "min": 842, "max": 10525 },
@@ -162,6 +174,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Cleansing Reflections",
       "stats": {
         "hp": { "min": 1129, "max": 14113 },
@@ -175,6 +188,7 @@
       "rarity": 5,
       "attribute": "Spectro",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Thawborn Renewal",
       "stats": {
         "hp": { "min": 866, "max": 10825 },
@@ -188,6 +202,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "General of the Midnight Rangers",
       "stats": {
         "hp": { "min": 839, "max": 10488 },
@@ -201,6 +216,7 @@
       "rarity": 5,
       "attribute": "Glacio",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Frosty Gusto",
       "stats": {
         "hp": { "min": 831, "max": 10388 },
@@ -214,6 +230,7 @@
       "rarity": 5,
       "attribute": "Fusion",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Howling Flame",
       "stats": {
         "hp": { "min": 953, "max": 11913 },
@@ -227,6 +244,7 @@
       "rarity": 5,
       "attribute": "Spectro",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Graceful Luminescence",
       "stats": {
         "hp": { "min": 866, "max": 10825 },
@@ -240,6 +258,7 @@
       "rarity": 5,
       "attribute": "Havoc",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Symphony of Beyond",
       "stats": {
         "hp": { "min": 862, "max": 10775 },
@@ -253,6 +272,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Sword",
+      "isNew": true,
       "description": "Bambooscape",
       "stats": {
         "hp": { "min": 979, "max": 12238 },
@@ -266,6 +286,7 @@
       "rarity": 5,
       "attribute": "Havoc",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Stage in the Box",
       "stats": {
         "hp": { "min": 980, "max": 12250 },
@@ -279,6 +300,7 @@
       "rarity": 5,
       "attribute": "Spectro",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Euphonic Chrysalis",
       "stats": {
         "hp": { "min": 1337, "max": 16713 },
@@ -292,6 +314,7 @@
       "rarity": 5,
       "attribute": "Spectro",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Nature Calling",
       "stats": {
         "hp": { "min": 1139, "max": 14238 },
@@ -305,6 +328,7 @@
       "rarity": 5,
       "attribute": "Electro",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Matter Weaver",
       "stats": {
         "hp": { "min": 850, "max": 10625 },
@@ -318,6 +342,7 @@
       "rarity": 5,
       "attribute": "Electro",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Evil-conquering Puppet",
       "stats": {
         "hp": { "min": 880, "max": 11000 },
@@ -331,6 +356,7 @@
       "rarity": 5,
       "attribute": "Spectro",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Scorched Radiance",
       "stats": {
         "hp": { "min": 862, "max": 10775 },
@@ -344,6 +370,7 @@
       "rarity": 5,
       "attribute": "Glacio",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Enchancted Brush",
       "stats": {
         "hp": { "min": 980, "max": 12250 },
@@ -358,6 +385,7 @@
       "rarity": 4,
       "attribute": "Fusion",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Gallant Blaze",
       "stats": {
         "hp": { "min": 727, "max": 9088 },
@@ -371,6 +399,7 @@
       "rarity": 4,
       "attribute": "Aero",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Mistcloak Strike",
       "stats": {
         "hp": { "min": 788, "max": 9850 },
@@ -384,6 +413,7 @@
       "rarity": 4,
       "attribute": "Glacio",
       "weaponType": "Rectifier",
+      "isNew": false,
       "description": "Healing You'tan",
       "stats": {
         "hp": { "min": 1025, "max": 12813 },
@@ -397,6 +427,7 @@
       "rarity": 4,
       "attribute": "Havoc",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Scarlet Shade",
       "stats": {
         "hp": { "min": 755, "max": 9438 },
@@ -410,6 +441,7 @@
       "rarity": 4,
       "attribute": "Electro",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Kaleido Refraction",
       "stats": {
         "hp": { "min": 680, "max": 8500 },
@@ -423,6 +455,7 @@
       "rarity": 4,
       "attribute": "Fusion",
       "weaponType": "Pistol",
+      "isNew": false,
       "description": "Dragon's Breath",
       "stats": {
         "hp": { "min": 802, "max": 10025 },
@@ -436,6 +469,7 @@
       "rarity": 4,
       "attribute": "Glacio",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Snow Waltz",
       "stats": {
         "hp": { "min": 805, "max": 10063 },
@@ -449,6 +483,7 @@
       "rarity": 4,
       "attribute": "Havoc",
       "weaponType": "Broadblade",
+      "isNew": false,
       "description": "Blossom of Slashes ",
       "stats": {
         "hp": { "min": 716, "max": 8950 },
@@ -462,6 +497,7 @@
       "rarity": 4,
       "attribute": "Aero",
       "weaponType": "Sword",
+      "isNew": false,
       "description": "Breath of Winds",
       "stats": {
         "hp": { "min": 816, "max": 10200 },
@@ -475,6 +511,7 @@
       "rarity": 4,
       "attribute": "Glacio",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Cryogenic Wonders ",
       "stats": {
         "hp": { "min": 798, "max": 9975 },
@@ -488,6 +525,7 @@
       "rarity": 4,
       "attribute": "Electro",
       "weaponType": "Gauntlet",
+      "isNew": false,
       "description": "Fist of Thunder",
       "stats": {
         "hp": { "min": 682, "max": 8525 },

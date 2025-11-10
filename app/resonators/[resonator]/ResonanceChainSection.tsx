@@ -39,7 +39,7 @@ export default function ResonanceChainSection({ sequenceNodes, resonator }: Reso
       <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Resonance Chain</h2>
 
       {/* Sequence Nodes Content */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
         {sequenceNodes.map((node, index) => {
           const nodeKey = `sequenceNode${index + 1}` as keyof typeof assets
           const nodeImage = assets[nodeKey]
@@ -53,10 +53,10 @@ export default function ResonanceChainSection({ sequenceNodes, resonator }: Reso
                       <img
                         src={nodeImage}
                         alt={`${node.name} icon`}
-                        className="size-14 sm:size-16 md:size-14 rounded-full object-cover shrink-0"
+                        className="size-12 sm:size-14 md:size-16 rounded-full object-cover shrink-0"
                       />
                     ) : (
-                      <div className="flex items-center justify-center size-14 sm:size-16 md:size-14 rounded-full bg-primary/10 text-primary font-bold text-lg sm:text-xl shrink-0">
+                      <div className="flex items-center justify-center size-12 sm:size-14 md:size-16 rounded-full bg-primary/10 text-primary font-bold text-base sm:text-lg shrink-0">
                         S{index + 1}
                       </div>
                     )}
@@ -67,7 +67,7 @@ export default function ResonanceChainSection({ sequenceNodes, resonator }: Reso
                   </Item>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="space-y-2 sm:space-y-3 text-sm sm:text-base px-2 sm:px-3">
+                  <div className="space-y-2 sm:space-y-3 text-sm sm:text-base px-3 sm:px-4 md:px-3">
                     {renderDescription(node.description)}
                   </div>
                 </AccordionContent>

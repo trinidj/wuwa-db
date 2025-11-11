@@ -63,22 +63,89 @@ export function colorizeNumbers(text: string, prefix: string = '') {
 }
 
 /**
- * Colorizes attribute names (e.g., "Electro", "Fusion DMG") in text
+ * Colorizes attribute names (e.g., "Electro", "Fusion DMG", "Aero Erosion") in text
+ * Also colorizes negative status effects with their attribute colors
  * @param text - The text to process
  * @returns An array of React elements and strings with colorized attributes
  */
 export function colorizeAttributes(text: string) {
   const attributeNames = ATTRIBUTES.map(attr => attr.label)
-  const attributePattern = new RegExp(`\\b(${attributeNames.join('|')})(\\s+DMG)?\\b`, 'g')
-  return applyTextTransformation(text, attributePattern, (match, idx) => (
-    <span
-      key={idx}
-      className="font-semibold"
-      style={{ color: getAttributeColor(match[1]) }}
-    >
-      {match[0]}
-    </span>
-  ))
+  
+  // Map status effects to their attribute names (capitalized)
+  const statusEffects: Record<string, string> = {
+    'Fusion Burst': 'Fusion',
+    'Glacio Chafe': 'Glacio',
+    'Aero Erosion': 'Aero',
+    'Electro Flare': 'Electro',
+    'Spectro Frazzle': 'Spectro',
+    'Havoc Bane': 'Havoc'
+  }
+  
+  // First, replace status effects with their colored versions
+  let result: (string | React.ReactElement)[] | string = text
+  
+  Object.entries(statusEffects).forEach(([statusEffect, attributeName]) => {
+    const statusPattern = new RegExp(`\\b${statusEffect}(?:\\s+DMG)?\\b`, 'g')
+    
+    if (Array.isArray(result)) {
+      result = result.flatMap(part => {
+        if (typeof part === 'string') {
+          return applyTextTransformation(part, statusPattern, (match, idx) => (
+            <span
+              key={`status-${attributeName}-${idx}`}
+              className="font-semibold"
+              style={{ color: getAttributeColor(attributeName) }}
+            >
+              {match[0]}
+            </span>
+          ))
+        }
+        return part
+      })
+    } else if (typeof result === 'string') {
+      result = applyTextTransformation(result, statusPattern, (match, idx) => (
+        <span
+          key={`status-${attributeName}-${idx}`}
+          className="font-semibold"
+          style={{ color: getAttributeColor(attributeName) }}
+        >
+          {match[0]}
+        </span>
+      ))
+    }
+  })
+  
+  // Then handle regular attribute patterns like "Aero DMG", etc.
+  const attributePattern = new RegExp(`\\b(${attributeNames.join('|')})(?:\\s+DMG)?\\b`, 'g')
+  
+  if (Array.isArray(result)) {
+    result = result.flatMap(part => {
+      if (typeof part === 'string') {
+        return applyTextTransformation(part, attributePattern, (match, idx) => (
+          <span
+            key={`attr-${idx}`}
+            className="font-semibold"
+            style={{ color: getAttributeColor(match[1]) }}
+          >
+            {match[0]}
+          </span>
+        ))
+      }
+      return part
+    })
+  } else if (typeof result === 'string') {
+    result = applyTextTransformation(result, attributePattern, (match, idx) => (
+      <span
+        key={`attr-${idx}`}
+        className="font-semibold"
+        style={{ color: getAttributeColor(match[1]) }}
+      >
+        {match[0]}
+      </span>
+    ))
+  }
+  
+  return result
 }
 
 /**

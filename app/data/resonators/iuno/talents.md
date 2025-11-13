@@ -1,5 +1,3 @@
-# Galbrena - Talents
-
 ## Normal Attack: Moon Steps
 
 **Moonring - Basic Attack**
@@ -126,7 +124,7 @@ The receiving Resonator gains 4% all DMG Amplification for 10s, stacking up to 1
 
 - Casting Closing Refrain or Unfinished Refrain restores 25 points of Sentience.
 
-- When Iuno is in Lunar Cycle, Moonring - Basic Attack, Moonring - Dodge Counter, and Mid-air Attack restore Sentience on hit.-
+- When Iuno is in Lunar Cycle, Moonring - Basic Attack, Moonring - Dodge Counter, and Mid-air Attack restore Sentience on hit.
 
 ---
 

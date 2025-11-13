@@ -12,7 +12,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb"
 import { SearchDialogContent } from "@/components/search-dialog-content"
 import resonatorsData from "@/app/data/resonators/index.json"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Resonator } from "@/app/types/resonator"
 
 import { Button } from "@/components/ui/button"

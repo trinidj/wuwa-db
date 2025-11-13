@@ -5,6 +5,7 @@ import AscensionSection from "./AscensionSection"
 import TalentsSection from "./TalentsSection"
 import ResonanceChainSection from "./ResonanceChainSection"
 import Link from "next/link"
+import resonatorsData from "@/app/data/resonators/index.json"
 
 import {
   NavigationMenu,
@@ -69,4 +70,11 @@ export default async function ResonatorDetails({
       </NavigationMenu>
     </div>
   )
+}
+
+// Pre-generate params for all known resonators to avoid runtime lookups
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return (resonatorsData.resonators as { name: string }[]).map((r) => ({ resonator: r.name }))
 }

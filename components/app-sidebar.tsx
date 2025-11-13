@@ -1,7 +1,7 @@
 import * as React from "react"
 import Link from "next/link"
 
-import { Home, Sword, User, Database } from "lucide-react"
+import { Home, Sword, User } from "lucide-react"
 
 import {
   Sidebar,

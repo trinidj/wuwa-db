@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Item, ItemContent, ItemDescription, ItemTitle, ItemHeader } from "@/components/ui/item"
+import { Item, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item"
 import { AscensionPhase, SkillAscensionPhase } from "@/app/types/resonator"
 import { getMaterialAssetPath } from "@/lib/utils"
 import Image from "next/image"

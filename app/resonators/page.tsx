@@ -101,9 +101,9 @@ export default function ResonatorsPage() {
 
   const getRarityGradient = (rarity: number) => {
     if (rarity === 5) {
-      return 'bg-gradient-to-t from-rarity-5'
+      return 'bg-gradient-to-t from-rarity-5 via-rarity-5/10 to-transparent'
     }
-    return 'bg-gradient-to-br from-rarity-4/20 to-rarity-4/5'
+    return 'bg-gradient-to-t from-rarity-4 via-rarity-4/10 to-transparent'
   }
 
   return (

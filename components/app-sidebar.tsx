@@ -46,14 +46,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} collapsible="icon" variant="floating">
       <SidebarHeader className="flex gap-0 flex-row items-center">
-        <Link href="/">
-          <Image 
-            src={navHeader.icon}
-            alt="Tethys Hub"
-            width={35}
-            height={35}
-          />
-        </Link>
+        <SidebarMenuButton asChild size="lg">
+          <Link href="/">
+            <Image 
+              src={navHeader.icon}
+              alt="Tethys Hub"
+              width={30}
+              height={30}
+              className="object-contain"
+            />
+            <span className="font-medium text-lg">{navHeader.title}</span>
+          </Link>
+        </SidebarMenuButton>
       </SidebarHeader>
 
       <Separator />
@@ -66,10 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <TooltipTrigger>
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild size="lg">
-                      <Link 
-                        href={item.url}
-                        className="font-semibold text-lg"
-                      >
+                      <Link href={item.url}>
                         <Image 
                           src={item.icon}
                           alt="Resonator Icon"
@@ -77,6 +78,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           height={30}
                           className="object-contain"
                         />
+                        <span className="font-semibold">{item.title}</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

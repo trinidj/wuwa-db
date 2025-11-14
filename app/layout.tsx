@@ -56,7 +56,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             <AppSidebar />
             <SidebarInset>
               <header className="flex justify-between h-14 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]">
-                <DynamicBreadcrumb />
+                <div className="flex items-center gap-4 px-4">
+                  <SidebarTrigger className="-ml-1 cursor-pointer" variant="outline" size="icon" />
+                  <DynamicBreadcrumb />
+                </div>
+
 
                 <div className="flex items-center gap-2 px-4">
                   <Dialog>

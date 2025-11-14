@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl font-bold">Welcome to Phrolo</h1>
+        <h1 className="text-4xl font-bold">The Tethys Hub</h1>
         <p className="text-xl text-muted-foreground">
           Your comprehensive database for Wuthering Waves
         </p>

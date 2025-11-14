@@ -14,7 +14,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
   const assets = getResonatorAssets(resonator)
 
   return (
-    <section id="profile" className="relative flex flex-col justify-between lg:flex-row gap-8 lg:gap-12">
+    <section id="profile" className="flex flex-col lg:flex-row gap-8 lg:gap-12">
       {/* Left Side: Profile Info */}
       <div className="flex flex-col gap-4 sm:gap-6 shrink-0">
         <div className="flex flex-col sm:flex-row sm:justify-between gap-4">
@@ -68,12 +68,15 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
       </div>
 
       {/* Right Side: Character Sprite */}
-      <Image
-        alt={`${resonator.name} sprite`}
-        src={assets.sprite}
-        width={500}
-        height={800}
-      />
+      <div className="flex justify-end flex-1">
+        <Image
+          alt={`${resonator.name} sprite`}
+          src={assets.sprite}
+          width={500}
+          height={800}
+          className="lg:flex lg:justify-end"
+        />
+      </div>
     </section>
   )
 }

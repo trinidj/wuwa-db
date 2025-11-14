@@ -2,8 +2,6 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-import { Home, Sword, User } from "lucide-react"
-
 import {
   Sidebar,
   SidebarContent,
@@ -12,26 +10,32 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
 } from "@/components/ui/sidebar"
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Separator } from "./ui/separator"
 
 const data = {
   navHeader: { title: "Tethys Hub", icon: "/assets/The_Black_Shores_Emblem.png" },
   navMain: [
     {
-      title: "Home",
-      url: "/",
-      icon: Home
-    },
-    {
       title: "Resonators",
       url: "/resonators",
-      icon: User
+      icon: "/assets/resonators_icon.png"
     },
     {
       title: "Weapons",
       url: "/weapons",
-      icon: Sword
+      icon: "/assets/weapons_icon.png"
+    },
+    {
+      title: "Echos",
+      url: "/echos",
+      icon: "/assets/echoes_icon.png"
     }
   ],
 }
@@ -40,39 +44,51 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { navHeader, navMain } = data
 
   return (
-    <Sidebar {...props} collapsible="offcanvas">
-      <SidebarHeader className="p-4">
-        <div className="flex h-fit items-center gap-2">                      
+    <Sidebar {...props} collapsible="icon" variant="floating">
+      <SidebarHeader className="flex gap-0 flex-row items-center">
+        <Link href="/">
           <Image 
-            src={navHeader.icon} 
-            alt="Tethys Hub" 
-            width={35} 
-            height={35} 
+            src={navHeader.icon}
+            alt="Tethys Hub"
+            width={35}
+            height={35}
           />
-          
-          <span className="text-xl font-semibold">{navHeader.title}</span>
-        </div>
+        </Link>
       </SidebarHeader>
+
+      <Separator />
+
       <SidebarContent>
         <SidebarGroup>
-          <SidebarMenu className="gap-2">
+          <SidebarMenu className="gap-4">
             {navMain.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <Link 
-                    href={item.url}
-                    className="font-semibold text-lg"
-                  >
-                    <item.icon />
-                    {item.title}
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              <Tooltip key={item.title}>
+                <TooltipTrigger>
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild size="lg">
+                      <Link 
+                        href={item.url}
+                        className="font-semibold text-lg"
+                      >
+                        <Image 
+                          src={item.icon}
+                          alt="Resonator Icon"
+                          width={30}
+                          height={30}
+                          className="object-contain"
+                        />
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </TooltipTrigger>
+                <TooltipContent side="right">
+                  <span className="font-semibold">{item.title}</span>
+                </TooltipContent>
+              </Tooltip>
             ))}
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   )
 }

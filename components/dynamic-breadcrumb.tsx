@@ -31,7 +31,7 @@ export function DynamicBreadcrumb() {
   });
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="px-4">
       <BreadcrumbList>
         {/* Home link - always shown */}
         <BreadcrumbItem>

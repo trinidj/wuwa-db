@@ -61,7 +61,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                   <DynamicBreadcrumb />
                 </div>
 
-
                 <div className="flex items-center gap-2 px-4">
                   <Dialog>
                     <DialogTrigger asChild>

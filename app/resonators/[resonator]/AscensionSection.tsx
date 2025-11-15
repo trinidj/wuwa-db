@@ -50,7 +50,7 @@ export default function AscensionSection({ ascensionData, skillAscensionData }: 
 
       {/* ascension Content */}
       <div>
-        <Tabs defaultValue="level">
+        <Tabs defaultValue="level" >
           <TabsList>
             <TabsTrigger value="level">Character Ascension</TabsTrigger>
             <TabsTrigger value="talent">Skill Ascension</TabsTrigger>

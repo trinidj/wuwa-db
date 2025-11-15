@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const cookieStore = await cookies()
-  const defaultClose = cookieStore.get("sidebar_state")?.value === "false"
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true"
   
   return (
     <html lang="en" suppressHydrationWarning>
@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           forcedTheme="dark"
           disableTransitionOnChange
         >
-          <SidebarProvider defaultOpen={defaultClose}>
+          <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
             <SidebarInset>
               <header className="flex justify-between h-14 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]">

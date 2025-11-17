@@ -44,7 +44,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { navHeader, navMain } = data
 
   return (
-    <Sidebar {...props} collapsible="icon" variant="floating">
+    <Sidebar {...props} collapsible="icon" variant="inset">
       <SidebarHeader className="flex gap-0 flex-row items-center">
         <SidebarMenuButton asChild size="lg">
           <Link href="/">

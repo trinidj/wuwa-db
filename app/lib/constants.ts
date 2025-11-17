@@ -3,12 +3,12 @@
  */
 
 export const ATTRIBUTES = [
-  { value: "aero", label: "Aero", icon: "/assets/attributes/Aero.png" },
-  { value: "electro", label: "Electro", icon: "/assets/attributes/Electro.png" },
-  { value: "fusion", label: "Fusion", icon: "/assets/attributes/Fusion.png" },
-  { value: "glacio", label: "Glacio", icon: "/assets/attributes/Glacio.png" },
-  { value: "havoc", label: "Havoc", icon: "/assets/attributes/Havoc.png" },
-  { value: "spectro", label: "Spectro", icon: "/assets/attributes/Spectro.png" }
+  { value: "aero", label: "Aero", icon: "/assets/attributes/aero.png" },
+  { value: "electro", label: "Electro", icon: "/assets/attributes/electro.png" },
+  { value: "fusion", label: "Fusion", icon: "/assets/attributes/fusion.png" },
+  { value: "glacio", label: "Glacio", icon: "/assets/attributes/glacio.png" },
+  { value: "havoc", label: "Havoc", icon: "/assets/attributes/havoc.png" },
+  { value: "spectro", label: "Spectro", icon: "/assets/attributes/spectro.png" }
 ] as const
 
 export const WEAPON_TYPES = [

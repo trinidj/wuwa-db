@@ -251,11 +251,18 @@ export default function ResonatorsPage() {
                     }
                     style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
                   >
-                    <div className="absolute left-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
+                    <div 
+                      className="absolute left-1 top-1 z-10 transform-gpu rounded-full" 
+                      style={{ 
+                        backfaceVisibility: 'hidden',
+                        borderColor: getAttributeColor(resonator.attribute),
+                        ...getAttributeBackgroundStyle(resonator.attribute, 0.5) 
+                      }}
+                    >
                       <Image
                         alt="Attribute"
-                        width={32}
-                        height={32}
+                        width={24}
+                        height={24}
                         src={assets.attribute}
                       />
                     </div>

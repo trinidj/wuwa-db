@@ -1,4 +1,4 @@
-## Normal Attack: Inkwash
+## Normal Attack: Pero, Easy
 
 **Basic Attack**
 

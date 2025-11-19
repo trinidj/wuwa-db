@@ -3,47 +3,47 @@
     "level": 10,
     "materials": [
       {
-        "name": "LF Polygon Core",
+        "name": "LF Howler  Core",
         "amount": 25,
         "type": "common"
       },
       {
-        "name": "MF Polygon Core",
+        "name": "MF Howler  Core",
         "amount": 28,
         "type": "common"
       },
       {
-        "name": "HF Polygon Core",
+        "name": "HF Howler  Core",
         "amount": 40,
         "type": "common"
       },
       {
-        "name": "FF Polygon Core",
+        "name": "FF Howler  Core",
         "amount": 57,
         "type": "common"
       },
       {
-        "name": "Cadence Seed",
+        "name": "Lento Helix",
         "amount": 25,
         "type": "common"
       },
       {
-        "name": "Cadence Bud",
+        "name": "Adagio Helix",
         "amount": 28,
         "type": "common"
       },
       {
-        "name": "Cadence Leaf",
+        "name": "Andante Helix",
         "amount": 55,
         "type": "common"
       },
       {
-        "name": "Cadence Blossom",
+        "name": "Presto Helix",
         "amount": 67,
         "type": "common"
       },
       {
-        "name": "The Netherworld's Stare",
+        "name": "Monument Bell",
         "amount": 26,
         "type": "boss"
       },

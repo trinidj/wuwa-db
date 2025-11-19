@@ -380,20 +380,6 @@
     },
 
     {
-      "id": "chixia",
-      "name": "Chixia",
-      "rarity": 4,
-      "attribute": "Fusion",
-      "weaponType": "Pistol",
-      "isNew": false,
-      "description": "Gallant Blaze",
-      "stats": {
-        "hp": { "min": 727, "max": 9088 },
-        "atk": { "min": 24, "max": 300 },
-        "def": { "min": 78, "max": 953 }
-      }
-    },
-    {
       "id": "aalto",
       "name": "Aalto",
       "rarity": 4,
@@ -419,6 +405,20 @@
         "hp": { "min": 1025, "max": 12813 },
         "atk": { "min": 17, "max": 213 },
         "def": { "min": 82, "max": 1002 }
+      }
+    },
+    {
+      "id": "chixia",
+      "name": "Chixia",
+      "rarity": 4,
+      "attribute": "Fusion",
+      "weaponType": "Pistol",
+      "isNew": false,
+      "description": "Gallant Blaze",
+      "stats": {
+        "hp": { "min": 727, "max": 9088 },
+        "atk": { "min": 24, "max": 300 },
+        "def": { "min": 78, "max": 953 }
       }
     },
     {

@@ -1,10 +1,16 @@
 import { Resonator, getResonatorAssets } from "@/app/types/resonator"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getAttributeColor, getAttributeBackgroundStyle } from "@/lib/utils"
 
 import LevelSlider from "./LevelSlider"
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface ProfileSectionProps {
   resonator: Resonator
@@ -12,6 +18,12 @@ interface ProfileSectionProps {
 
 export default function ProfileSection({ resonator }: ProfileSectionProps) {
   const assets = getResonatorAssets(resonator)
+  const combatRoleIcons: Record<string, string> = {
+    "main damage dealer": "/assets/combat_roles/main_damage_dealer.png",
+    "heavy attack damage": "/assets/combat_roles/heavy_attack_damage.png",
+    "dmg amplification": "/assets/combat_roles/dmg_amplification.png",
+    "shielding & dmg amplification support": "/assets/combat_roles/dmg_amplification.png"
+  }
 
   return (
     <section id="profile" className="flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -65,6 +77,40 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
             <LevelSlider resonator={resonator} />
           </CardContent>
         </Card>
+
+        {resonator.combatRoles?.length ? (
+          <Card className="gap-2">
+            <CardHeader>
+              <CardTitle>Combat Roles</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="flex flex-wrap items-center gap-3 sm:gap-2">
+                {resonator.combatRoles.map((role) => {
+                  const icon = combatRoleIcons[role.toLowerCase()]
+                  return (
+                    <li key={role} className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
+                      {icon ? (
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Image
+                              alt={`${role} icon`}
+                              src={icon}
+                              width={40}
+                              height={40}
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className="text-center font-semibold">{role}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      ) : null}
+                    </li>
+                  )
+                })}
+              </ul>
+            </CardContent>
+          </Card>
+        ) : null}
       </div>
 
       {/* Right Side: Character Sprite */}

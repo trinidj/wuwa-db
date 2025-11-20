@@ -56,6 +56,7 @@ export interface Resonator {
   weaponType: WeaponType;
   isNew?: boolean;
   description: string;
+  combatRoles?: string[];
   stats: {
     hp: StatRange;
     atk: StatRange;

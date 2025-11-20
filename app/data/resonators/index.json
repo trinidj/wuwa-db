@@ -8,6 +8,7 @@
       "weaponType": "Broadblade",
       "isNew": false,
       "description": "Magnetism Before Light",
+      "combatRoles": ["Main Damage Dealer", "Heavy Attack Damage", "DMG Amplification"],
       "stats": {
         "hp": { "min": 824, "max": 10300 },
         "atk": { "min": 37, "max": 463 },
@@ -110,7 +111,8 @@
         "hp": { "min": 831, "max": 10388 },
         "atk": { "min": 37, "max": 463 },
         "def": { "min": 90, "max": 1100 }
-      }
+      },
+      "combatRoles": ["Main Damage Dealer", "Heavy Attack Damage", "DMG Amplification"]
     },
     {
       "id": "chisa",

@@ -81,8 +81,8 @@ export default function TalentsSection({ talents, resonatorName, resonatorRarity
   ]
 
   const inheritSkillItems = [
-    { type: "Inherit Skill", asset: assets.inheritSkill1, talent: talents?.inheritSkill1 },
-    { type: "Inherit Skill", asset: assets.inheritSkill2, talent: talents?.inheritSkill2 },
+    { type: "Inherent Skill", asset: assets.inheritSkill1, talent: talents?.inheritSkill1 },
+    { type: "Inherent Skill", asset: assets.inheritSkill2, talent: talents?.inheritSkill2 },
   ]
 
   const concertoSkillItems = [
@@ -116,9 +116,9 @@ export default function TalentsSection({ talents, resonatorName, resonatorRarity
           ))}
         </div>
 
-        {/* Inherit Skills */}
+        {/* Inherent Skills */}
         <div className="flex flex-col">
-          <h3 className="text-lg sm:text-xl font-bold">Inherit Skills</h3>
+          <h3 className="text-lg sm:text-xl font-bold">Inherent Skills</h3>
           {inheritSkillItems.map((skill, index) => (
             <SkillAccordion
               key={`${skill.type}-${skill.talent?.name ?? index}`}

@@ -146,7 +146,7 @@ Lupa can hold up to 100 points of Wolflame.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Remember My Name
 

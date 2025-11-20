@@ -80,7 +80,7 @@ During the duration of Resonance Liberation Cosmos Rampage, hitting targets will
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Angry Cosmos
 

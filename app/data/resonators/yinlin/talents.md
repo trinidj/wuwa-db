@@ -70,7 +70,7 @@ When a target marked with Punishment Mark is damaged, Judgement Strike will fall
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Pain Immersion
 

@@ -54,7 +54,7 @@ Verina can hold up to 4 "Photosynthesis Energy". Verina obtains 1 stack of "Phot
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Grace of Life
 

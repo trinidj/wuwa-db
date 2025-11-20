@@ -128,7 +128,7 @@ The receiving Resonator gains 4% all DMG Amplification for 10s, stacking up to 1
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Waxing Ascent
 

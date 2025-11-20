@@ -98,7 +98,7 @@ When a Phantasmic Imprint is nearby and there are 2 stacks of Painter's Delight,
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Calligrapher's Touch
 

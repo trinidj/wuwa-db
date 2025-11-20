@@ -82,7 +82,7 @@ When in Intuition triggered by Resonance Liberation:
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Knowing
 

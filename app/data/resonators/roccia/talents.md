@@ -56,7 +56,7 @@ Roccia can hold up to 300 Imagination.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Immersive Performance
 

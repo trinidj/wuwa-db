@@ -70,7 +70,7 @@ Lingyang can hold up to 100 Lion's Spirit. When casting Resonance Skill Furious 
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Lion's Pride
 

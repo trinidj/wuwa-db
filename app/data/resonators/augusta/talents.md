@@ -170,7 +170,7 @@ Augusta can hold up to 100 points of Ascendancy.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Glory's Favor
 

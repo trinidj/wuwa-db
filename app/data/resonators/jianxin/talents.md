@@ -68,7 +68,7 @@ Jianxin can hold up to 120 Chi. Chi is obtained when a Normal Attack Fengyiquan 
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Formless Release
 

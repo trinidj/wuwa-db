@@ -134,7 +134,7 @@ While in Threshold State, hitting an enemy with Basic Attack, Heavy Attack - Vol
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Oathbound Hunt
 

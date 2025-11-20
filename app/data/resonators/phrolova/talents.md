@@ -154,7 +154,7 @@ Phrolova cannot obtain Volatile Notes during Resolving Chord.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Accidental
 

@@ -80,7 +80,7 @@ Shorekeeper can hold up to 5 segments of Empirical Data.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Life Entwined
 

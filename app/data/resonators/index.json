@@ -113,6 +113,20 @@
       }
     },
     {
+      "id": "chisa",
+      "name": "Chisa",
+      "rarity": 5,
+      "attribute": "Havoc",
+      "weaponType": "Broadblade",
+      "isNew": true,
+      "description": "Eye of Unraveling",
+      "stats": {
+        "hp": { "min": 862, "max": 10775 },
+        "atk": { "min": 37, "max": 438 },
+        "def": { "min": 93, "max": 1137 }
+      }
+    },
+    {
       "id": "ciaccona",
       "name": "Ciaccona",
       "rarity": 5,
@@ -272,7 +286,7 @@
       "rarity": 5,
       "attribute": "Aero",
       "weaponType": "Sword",
-      "isNew": true,
+      "isNew": false,
       "description": "Bambooscape",
       "stats": {
         "hp": { "min": 979, "max": 12238 },

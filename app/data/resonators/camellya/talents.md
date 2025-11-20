@@ -108,7 +108,7 @@ Consuming 10 Crimson Pistils recovers 4 Concerto Energy and obtains 1 Crimson Bu
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Seedbed
 

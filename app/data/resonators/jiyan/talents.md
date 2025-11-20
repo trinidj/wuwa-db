@@ -64,7 +64,7 @@ Jiyan can hold up to 60 Resolve. Jiyan gains "Resolve" when his Normal Attack Lo
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Heavenly Balance
 

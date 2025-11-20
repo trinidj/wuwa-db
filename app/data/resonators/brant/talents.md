@@ -88,7 +88,7 @@ Brant can hold up to 100 Bravo.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Voyager's Blaze
 

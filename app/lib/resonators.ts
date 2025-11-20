@@ -125,16 +125,16 @@ export function parseTalentsMarkdown(markdown: string): Record<string, TalentDat
     const descriptionStart = trimmedSection.indexOf('\n') + 1
     const description = trimmedSection.substring(descriptionStart).trim()
 
-    // Handle special cases for Inherit Skills section
-    if (type === 'Inherit Skills') {
-      // Parse individual inherit skills using h3 headers (###)
+    // Handle special cases for Inherent Skills section
+    if (type === 'Inherent Skills') {
+      // Parse individual inherent skills using h3 headers (###)
       const inheritSkillMatches = description.matchAll(/###\s+(.+?)\n([\s\S]*?)(?=###|$)/g)
       let inheritIndex = 1
       for (const match of inheritSkillMatches) {
         const [, skillName, skillDesc] = match
         talents[`inheritSkill${inheritIndex}`] = {
           name: skillName,
-          type: 'Inherit Skill',
+          type: 'Inherent Skill',
           description: skillDesc.trim()
         }
         inheritIndex++

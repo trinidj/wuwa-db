@@ -127,7 +127,7 @@ When in water, Cantarella's swimming speed increases and STA cost decreases.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### "Cure"
 

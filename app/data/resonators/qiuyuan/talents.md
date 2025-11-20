@@ -80,7 +80,7 @@ Qiuyuan can hold up to 600 points of Swordster's Soliloquy.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Quietude Within
 

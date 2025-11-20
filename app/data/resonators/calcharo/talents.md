@@ -62,7 +62,7 @@ Under Resonance Liberation Deathblade Gear state, Calcharo's Forte Gauge is repl
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Bloodshed Awaken
 

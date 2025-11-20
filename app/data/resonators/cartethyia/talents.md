@@ -172,7 +172,7 @@ Can be cast in mid-air.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### A Heart's Truest Wishes
 

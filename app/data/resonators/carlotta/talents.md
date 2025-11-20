@@ -123,7 +123,7 @@ Restore 3 Moldable Crystal(s) upon a successful Dodge.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Flawless Purity
 

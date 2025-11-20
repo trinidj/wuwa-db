@@ -116,7 +116,7 @@ Blaze is capped at 100 when not in Inferno Mode.
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Quick Response
 

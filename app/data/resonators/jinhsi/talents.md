@@ -76,7 +76,7 @@ Jinhsi gains 1 Incandescence anytime Resonators in the party inflict Attribute D
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Radiant Surge
 

@@ -88,7 +88,7 @@ When Phoebe has Divine Voice, casting Basic Attack Stage 3 or Dodge Counter repl
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Presence
 

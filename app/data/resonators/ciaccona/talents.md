@@ -100,7 +100,7 @@ Casting Basic Attack Stage 4 or Intro Skill recovers 1 segment of Musical Essenc
 
 ---
 
-## Inherit Skills
+## Inherent Skills
 
 ### Interlude Tune
 

@@ -1,5 +1,3 @@
-# Changli Resonance Chain
-
 ## Sequence Node 1: Hidden Thoughts
 
 Resonance Skill Tripartite Flames and Heavy Attack Flaming Sacrifice increase Changli's DMG dealt by 10% and resistance to interruption.

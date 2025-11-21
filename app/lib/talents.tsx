@@ -217,12 +217,15 @@ export function renderDescription(description?: string) {
           // Split into individual list items, filtering out empty lines
           const items = paragraph.split('\n').filter(line => line.trim())
           return (
-            <ul key={index} className="list-disc list-inside space-y-1 ml-2">
+            <ul key={index} className="list-disc list-outside pl-5 space-y-1 ml-2">
               {items.map((item, itemIndex) => {
                 // Remove the list marker (-, *, or •)
                 const cleanItem = item.replace(/^[•\-*]\s+/, '')
                 return (
-                  <li key={`${index}-${itemIndex}`} className="text-sm sm:text-base">
+                  <li 
+                    key={`${index}-${itemIndex}`} 
+                    className="text-sm sm:text-base whitespace-normal wrap-break-word"
+                  >
                     {colorizeText(cleanItem, `p${index}-li${itemIndex}-`)}
                   </li>
                 )

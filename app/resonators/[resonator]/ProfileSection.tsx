@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getAttributeColor, getAttributeBackgroundStyle } from "@/lib/utils"
 
 import LevelSlider from "./LevelSlider"
+import { Ellipsis } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 import {
   Tooltip,
@@ -12,12 +14,31 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import combatRolesData from "@/app/data/combat_roles.json"
+
 interface ProfileSectionProps {
   resonator: Resonator
 }
 
 export default function ProfileSection({ resonator }: ProfileSectionProps) {
   const assets = getResonatorAssets(resonator)
+  const combatRoleMap = combatRolesData.combat_roles.reduce<
+    Record<string, { description: string }>
+  >((acc, role) => {
+    acc[role.name] = { description: role.description }
+    return acc
+  }, {})
+
   const getCombatRoleIcon = (role: string) => {
     const slug = role
       .toLowerCase()
@@ -83,8 +104,51 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
 
         {resonator.combatRoles?.length ? (
           <Card className="gap-2">
-            <CardHeader>
+            <CardHeader className="flex justify-between items-center">
               <CardTitle>Combat Roles</CardTitle>
+              
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="icon" className="cursor-pointer">
+                    <Ellipsis />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Combat Roles</DialogTitle>
+                  </DialogHeader>
+                  <div className="grid gap-3">
+                    {resonator.combatRoles.map((role) => {
+                      const icon = getCombatRoleIcon(role)
+                      const details = combatRoleMap[role]
+                      return (
+                        <div
+                          key={role}
+                          className="flex items-start gap-3 rounded-md border p-3"
+                        >
+                          {icon ? (
+                            <Image
+                              alt={`${role} icon`}
+                              src={icon}
+                              width={36}
+                              height={36}
+                              className="mt-0.5"
+                            />
+                          ) : null}
+                          <div className="flex flex-col gap-1">
+                            <p className="font-semibold leading-none">{role}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {details?.description ??
+                                "Description not available for this combat role."}
+                            </p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </DialogContent>
+              </Dialog>
+
             </CardHeader>
             <CardContent>
               <ul className="flex flex-wrap items-center gap-3 sm:gap-2">

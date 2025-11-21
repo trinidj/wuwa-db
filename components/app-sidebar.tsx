@@ -33,8 +33,8 @@ const data = {
       icon: "/assets/weapons_icon.png"
     },
     {
-      title: "echos",
-      url: "/echoes",
+      title: "Sonata Gallery",
+      url: "/sonata-gallery",
       icon: "/assets/echoes_icon.png"
     }
   ],

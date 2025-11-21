@@ -258,8 +258,6 @@ When a Resonator in the team defeats a target marked by Unseen Snare, the Cooldo
 
 ### All Ends Here
 
-All Ends Here
-
 Casting Intro Skill Reverberance - Return or Resonance Liberation Moment of Nihility grants 20% Havoc DMG Bonus and 20% Healing Bonus for 12s.
 
 When Resonators in the team with Thread of Bane defeat a target marked by Unseen Snare, Chisa gains Sight of Unraveling, lasting 3s.

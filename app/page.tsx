@@ -10,7 +10,7 @@ export default function Home() {
       <header className="flex flex-col items-center gap-6">
         <div className="rounded-full bg-muted p-2">
           <Image 
-            src="/assets/site_icon.ico"
+            src="/assets/site_icon.png"
             alt="Phrolova Project"
             width={128}
             height={128}

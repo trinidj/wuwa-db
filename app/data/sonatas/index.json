@@ -1,0 +1,80 @@
+[
+  {
+    "id": "freezing_frost",
+    "name": "Freezing Frost",
+    "icon": "/assets/sonata/freezing_frost.png",
+    "descriptionPath": "/data/sonatas/freezing_frost/description.md"
+  },
+  {
+    "id": "molten_rift",
+    "name": "Molten Rift",
+    "icon": "/assets/sonata/molten_rift.png",
+    "descriptionPath": "/data/sonatas/molten_rift/description.md"
+  },
+  {
+    "id": "void_thunder",
+    "name": "Void Thunder",
+    "icon": "/assets/sonata/void_thunder.png",
+    "descriptionPath": "/data/sonatas/void_thunder/description.md"
+  },
+  {
+    "id": "sierra_gale",
+    "name": "Sierra Gale",
+    "icon": "/assets/sonata/sierra_gale.png",
+    "descriptionPath": "/data/sonatas/sierra_gale/description.md"
+  },
+  {
+    "id": "celestial_light",
+    "name": "Celestial Light",
+    "icon": "/assets/sonata/celestial_light.png",
+    "descriptionPath": "/data/sonatas/celestial_light/description.md"
+  },
+  {
+    "id": "havoc_eclipse",
+    "name": "Havoc Eclipse",
+    "icon": "/assets/sonata/havoc_eclipse.png",
+    "descriptionPath": "/data/sonatas/havoc_eclipse/description.md"
+  }, 
+  {
+    "id": "rejuvenating_glow",
+    "name": "Rejuvenating Glow",
+    "icon": "/assets/sonata/rejuvenating_glow.png",
+    "descriptionPath": "/data/sonatas/rejuvenating_glow/description.md"
+  },
+  {
+    "id": "moonlit_clouds",
+    "name": "Moonlit Clouds",
+    "icon": "/assets/sonata/moonlit_clouds.png",
+    "descriptionPath": "/data/sonatas/moonlit_clouds/description.md"
+  },
+  {
+    "id": "lingering_tunes",
+    "name": "Lingering Tunes",
+    "icon": "/assets/sonata/lingering_tunes.png",
+    "descriptionPath": "/data/sonatas/lingering_tunes/description.md"
+  },
+  {
+    "id": "frosty_resolve",
+    "name": "Frosty Resolve",
+    "icon": "/assets/sonata/frosty_resolve.png",
+    "descriptionPath": "/data/sonatas/frosty_resolve/description.md"
+  },
+  {
+    "id": "eternal_radiance",
+    "name": "Eternal Radiance",
+    "icon": "/assets/sonata/eternal_radiance.png",  
+    "descriptionPath": "/data/sonatas/eternal_radiance/description.md"
+  },
+  {
+    "id": "midnight_veil",
+    "name": "Midnight Veil",
+    "icon": "/assets/sonata/midnight_veil.png",
+    "descriptionPath": "/data/sonatas/midnight_veil/description.md"
+  },
+  {
+    "id": "empyrean_anthem",
+    "name": "Empyrean Anthem",
+    "icon": "/assets/sonata/empyrean_anthem.png",
+    "descriptionPath": "/data/sonatas/empyrean_anthem/description.md"
+  }
+]

@@ -6,7 +6,6 @@ import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -17,10 +16,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Separator } from "./ui/separator"
 
 const data = {
-  navHeader: { title: "Tethys Hub", icon: "/assets/The_Black_Shores_Emblem.png" },
   navMain: [
     {
       title: "Resonators",
@@ -41,27 +38,10 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { navHeader, navMain } = data
+  const { navMain } = data
 
   return (
     <Sidebar {...props} collapsible="icon" variant="inset">
-      <SidebarHeader className="flex gap-0 flex-row items-center">
-        <SidebarMenuButton asChild size="lg">
-          <Link href="/">
-            <Image 
-              src={navHeader.icon}
-              alt="Tethys Hub"
-              width={30}
-              height={30}
-              className="object-contain"
-            />
-            <span className="font-medium text-lg">{navHeader.title}</span>
-          </Link>
-        </SidebarMenuButton>
-      </SidebarHeader>
-
-      <Separator />
-
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu className="gap-2">

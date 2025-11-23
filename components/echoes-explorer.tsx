@@ -47,8 +47,8 @@ export default function EchoesExplorer({
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="space-y-2 max-h-[570px] overflow-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div className="space-y-2 max-h-[570px] overflow-auto md:sticky md:top-20">
         <Accordion type="single" collapsible value={selected ?? ""} onValueChange={(v) => setSelected(v === "" ? null : v)}>
           {sonatas.map((s) => (
             <AccordionItem key={s.id} value={s.id}>
@@ -73,19 +73,19 @@ export default function EchoesExplorer({
         </Accordion>
       </div>
 
-      <div>
+      <div className="px-0 md:px-4">
         <div className="mb-3">
           <h2 className="text-2xl font-semibold">{selectedSonata ? selectedSonata.name : 'Select a Sonata'}</h2>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           {filtered.length === 0 && <div className="text-sm text-muted-foreground">No echoes for this set.</div>}
-          
+
           {/* 4 cost */}
           {echosByRarity.cost_4.length > 0 && (
-            <div>
+            <section>
               <h3 className="text-sm font-semibold mb-2">4-Cost</h3>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {echosByRarity.cost_4.map((e) => (
                   <Item key={e.id} variant="muted">
                     <ItemContent>
@@ -94,14 +94,14 @@ export default function EchoesExplorer({
                   </Item>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
           {/* 3 cost */}
           {echosByRarity.cost_3.length > 0 && (
-            <div>
+            <section>
               <h3 className="text-sm font-semibold mb-2">3-Cost</h3>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {echosByRarity.cost_3.map((e) => (
                   <Item key={e.id} variant="muted">
                     <ItemContent>
@@ -110,37 +110,42 @@ export default function EchoesExplorer({
                   </Item>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
           {/* 1 cost */}
           {echosByRarity.cost_1.length > 0 && (
-            <div className="flex flex-col gap-2">
-              <header className="flex items-center px-2 w-fit border-2 rounded-lg border-yellow-400/50">
-                <h3 className="text-lg font-semibold">1-Cost</h3>
-              </header>
+            <section>
+              <div className="flex items-center gap-2">
+                <header className="px-2 py-1 rounded-lg border border-yellow-400/50">
+                  <h3 className="text-lg font-semibold">1-Cost</h3>
+                </header>
+                <span className="text-sm text-muted-foreground">Tap icons to view names</span>
+              </div>
 
-              <div className="space-y-1 flex gap-2">
+              <div className="mt-2 flex gap-3 flex-wrap sm:flex-nowrap overflow-x-auto py-1">
                 {echosByRarity.cost_1.map((e) => (
                   <Tooltip key={e.id}>
                     <TooltipTrigger>
-                      <Item variant="muted" className="w-fit mb-0">
-                        <ItemContent>
-                          <Image 
-                            src={`/assets/echoes/${e.id}.png`}
-                            alt={e.name}
-                            width={64}
-                            height={64}
-                            className="object-contain rounded-xl"
-                          />
-                        </ItemContent>
-                      </Item>
+                      <div className="w-20 h-20 shrink-0">
+                        <Item variant="muted" className="w-full h-full">
+                          <ItemContent className="p-0 flex items-center justify-center">
+                            <Image 
+                              src={`/assets/echoes/${e.id}.png`}
+                              alt={e.name}
+                              width={64}
+                              height={64}
+                              className="object-contain rounded-xl"
+                            />
+                          </ItemContent>
+                        </Item>
+                      </div>
                     </TooltipTrigger>
                     <TooltipContent>{e.name}</TooltipContent>
                   </Tooltip>
                 ))}
               </div>
-            </div>
+            </section>
           )}
         </div>
       </div>

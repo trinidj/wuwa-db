@@ -34,35 +34,20 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
 
   const stats: StatConfig[] = useMemo(() => [
     {
-      label: "HP",
+      label: "Base HP",
       icon: "hp",
       getValue: () => currentHP.toLocaleString()
     },
     {
-      label: "ATK",
+      label: "Base ATK",
       icon: "atk",
       getValue: () => currentATK.toLocaleString()
     },
     {
-      label: "DEF",
+      label: "Base DEF",
       icon: "def",
       getValue: () => currentDEF.toLocaleString()
     },
-    {
-      label: "Energy Regen",
-      icon: "energy",
-      getValue: () => "100%"
-    },
-    {
-      label: "Crit. Rate",
-      icon: "cr",
-      getValue: () => "5%"
-    },
-    {
-      label: "Crit. DMG",
-      icon: "cd",
-      getValue: () => "150%"
-    }
   ], [currentHP, currentATK, currentDEF])
 
   return (

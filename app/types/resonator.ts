@@ -79,6 +79,7 @@ export interface Resonator {
 export interface ResonatorAssets {
   image: string;
   sprite: string;
+  splashArt: string;
   attribute: string;
   weaponType: string;
 }
@@ -98,6 +99,7 @@ export function getResonatorAssets(resonator: Resonator): ResonatorAssets {
   return {
     image: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/icon.png`,
     sprite: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/sprite.png`,
+    splashArt: `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/splash_art.png`,
     attribute: `/assets/attributes/${resonator.attribute}.png`,
     weaponType: `/assets/weapons/${weaponIconMap[resonator.weaponType]}`,
   };

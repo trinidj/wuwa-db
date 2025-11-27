@@ -95,7 +95,7 @@ export default function EchoesExplorer({
                   <Tooltip key={e.id}>
                     <TooltipTrigger>
                       <div className="w-20 h-20 shrink-0">
-                        <Item variant="muted" className="w-full h-full">
+                        <Item variant="muted" className="p-2 w-full h-full">
                           <ItemContent className="p-0 flex items-center justify-center">
                             <Image 
                               src={`/assets/echoes/${e.id}.png`}

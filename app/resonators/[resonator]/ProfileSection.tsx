@@ -2,13 +2,11 @@ import fs from "fs"
 import path from "path"
 import { Resonator, getResonatorAssets } from "@/app/types/resonator"
 import Image from "next/image"
-import { Separator } from "@/components/ui/separator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getAttributeColor, getAttributeBackgroundStyle } from "@/lib/utils"
-import { Expand } from "lucide-react"
+import { Expand, Ellipsis } from "lucide-react"
 
 import LevelSlider from "./LevelSlider"
-import { Ellipsis } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 import {
@@ -129,28 +127,25 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
                     <DialogHeader>
                       <DialogTitle>Combat Roles</DialogTitle>
                     </DialogHeader>
-                    <div className="grid gap-3">
-                      {resonator.combatRoles.map((role) => {
-                        const icon = getCombatRoleIcon(role)
-                        const details = combatRoleMap[role]
-                        return (
-                          <div
-                            key={role}
-                            className="flex items-start gap-3 rounded-md border p-3"
-                          >
-                            {icon ? (
-                              <Image
-                                alt={`${role} icon`}
-                                src={icon}
-                                width={36}
-                                height={36}
-                                quality={100}
-                                className="mt-0.5"
-                              />
-                            ) : null}
-                            <div className="flex flex-col gap-1">
-                              <p className="font-semibold leading-none">{role}</p>
-                              <p className="text-sm text-muted-foreground">
+                  <div className="grid gap-3">
+                    {resonator.combatRoles.map((role) => {
+                      const details = combatRoleMap[role]
+                      return (
+                        <div
+                          key={role}
+                          className="flex items-start gap-3 rounded-md border p-3"
+                        >
+                          <Image
+                            alt={`${role} icon`}
+                            src={getCombatRoleIcon(role)}
+                            width={36}
+                            height={36}
+                            quality={100}
+                            className="mt-0.5"
+                          />
+                          <div className="flex flex-col gap-1">
+                            <p className="font-semibold leading-none">{role}</p>
+                            <p className="text-sm text-muted-foreground">
                                 {details?.description ??
                                   "Description not available for this combat role."}
                               </p>
@@ -166,21 +161,18 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
               <CardContent>
                 <ul className="flex flex-wrap items-center gap-3 sm:gap-2">
                   {resonator.combatRoles.map((role) => {
-                    const icon = getCombatRoleIcon(role)
                     return (
                       <li key={role} className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <div className="flex items-center gap-2">
-                              {icon ? (
-                                <Image
-                                  alt={`${role} icon`}
-                                  src={icon}
-                                  width={40}
-                                  height={40}
-                                  quality={100}
-                                />
-                              ) : null}
+                              <Image
+                                alt={`${role} icon`}
+                                src={getCombatRoleIcon(role)}
+                                width={40}
+                                height={40}
+                                quality={100}
+                              />
                             </div>
                           </TooltipTrigger>
                           <TooltipContent>

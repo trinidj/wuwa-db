@@ -13,7 +13,7 @@ import {
 interface StatConfig {
   label: string
   icon: string
-  getValue: (level: number) => string
+  value: string
 }
 
 export default function LevelSlider({ resonator }: { resonator: Resonator }) {
@@ -36,17 +36,17 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
     {
       label: "Base HP",
       icon: "hp",
-      getValue: () => currentHP.toLocaleString()
+      value: currentHP.toLocaleString()
     },
     {
       label: "Base ATK",
       icon: "atk",
-      getValue: () => currentATK.toLocaleString()
+      value: currentATK.toLocaleString()
     },
     {
       label: "Base DEF",
       icon: "def",
-      getValue: () => currentDEF.toLocaleString()
+      value: currentDEF.toLocaleString()
     },
   ], [currentHP, currentATK, currentDEF])
 
@@ -79,7 +79,7 @@ export default function LevelSlider({ resonator }: { resonator: Resonator }) {
                 />
                 {stat.label}
               </TableCell>
-              <TableCell className="font-medium">{stat.getValue(currentLevel)}</TableCell>
+              <TableCell className="font-medium">{stat.value}</TableCell>
             </TableRow>
           ))}
         </TableBody>

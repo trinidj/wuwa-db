@@ -45,6 +45,12 @@ export default function EchoesExplorer({
     cost_3: filtered.filter((e) => e.rarity === 'cost_3'),
     cost_1: filtered.filter((e) => e.rarity === 'cost_1'),
   }
+  type EchoCostKey = keyof typeof echosByRarity
+  const echoSections: { key: EchoCostKey; label: string; padded?: boolean }[] = [
+    { key: "cost_4", label: "4-Cost", padded: true },
+    { key: "cost_3", label: "3-Cost" },
+    { key: "cost_1", label: "1-Cost" },
+  ]
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -81,107 +87,45 @@ export default function EchoesExplorer({
         <div className="space-y-4">
           {filtered.length === 0 && <div className="text-sm text-muted-foreground">No echoes for this set.</div>}
 
-          {/* 4 cost */}
-          {echosByRarity.cost_4.length > 0 && (
-            <section>
-              <div className="flex items-center gap-2">
-                <header className="px-2 py-1 rounded-lg border border-yellow-400/50">
-                  <h3 className="text-lg font-semibold">4-Cost</h3>
-                </header>
-              </div>
+          {echoSections.map(({ key, label, padded }) => {
+            const echoesForCost = echosByRarity[key]
+            if (echoesForCost.length === 0) return null
 
-              <div className="mt-2 flex gap-3 flex-wrap overflow-x-auto py-1">
-                {echosByRarity.cost_4.map((e) => (
-                  <Tooltip key={e.id}>
-                    <TooltipTrigger>
-                      <div className="w-20 h-20 shrink-0">
-                        <Item variant="muted" className="p-2 w-full h-full">
-                          <ItemContent className="p-0 flex items-center justify-center">
-                            <Image 
-                              src={`/assets/echoes/${e.id}.png`}
-                              alt={e.name}
-                              width={64}
-                              height={64}
-                              className="object-contain rounded-xl"
-                            />
-                          </ItemContent>
-                        </Item>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>{e.name}</TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </section>
-          )}
+            const itemClassName = `${padded ? "p-2 " : ""}w-full h-full`
 
-          {/* 3 cost */}
-          {echosByRarity.cost_3.length > 0 && (
-            <section>
-              <div className="flex items-center gap-2">
-                <header className="px-2 py-1 rounded-lg border border-yellow-400/50">
-                  <h3 className="text-lg font-semibold">3-Cost</h3>
-                </header>
-              </div>
+            return (
+              <section key={key}>
+                <div className="flex items-center gap-2">
+                  <header className="px-2 py-1 rounded-lg border border-yellow-400/50">
+                    <h3 className="text-lg font-semibold">{label}</h3>
+                  </header>
+                </div>
 
-              <div className="mt-2 flex gap-3 flex-wrap overflow-x-auto py-1">
-                {echosByRarity.cost_3.map((e) => (
-                  <Tooltip key={e.id}>
-                    <TooltipTrigger>
-                      <div className="w-20 h-20 shrink-0">
-                        <Item variant="muted" className="w-full h-full">
-                          <ItemContent className="p-0 flex items-center justify-center">
-                            <Image 
-                              src={`/assets/echoes/${e.id}.png`}
-                              alt={e.name}
-                              width={64}
-                              height={64}
-                              className="object-contain rounded-xl"
-                            />
-                          </ItemContent>
-                        </Item>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>{e.name}</TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* 1 cost */}
-          {echosByRarity.cost_1.length > 0 && (
-            <section>
-              <div className="flex items-center gap-2">
-                <header className="px-2 py-1 rounded-lg border border-yellow-400/50">
-                  <h3 className="text-lg font-semibold">1-Cost</h3>
-                </header>
-              </div>
-
-              <div className="mt-2 flex gap-3 flex-wrap overflow-x-auto py-1">
-                {echosByRarity.cost_1.map((e) => (
-                  <Tooltip key={e.id}>
-                    <TooltipTrigger>
-                      <div className="w-20 h-20 shrink-0">
-                        <Item variant="muted" className="w-full h-full">
-                          <ItemContent className="p-0 flex items-center justify-center">
-                            <Image 
-                              src={`/assets/echoes/${e.id}.png`}
-                              alt={e.name}
-                              width={64}
-                              height={64}
-                              className="object-contain rounded-xl"
-                            />
-                          </ItemContent>
-                        </Item>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>{e.name}</TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </section>
-          )}
+                <div className="mt-2 flex gap-3 flex-wrap overflow-x-auto py-1">
+                  {echoesForCost.map((e) => (
+                    <Tooltip key={e.id}>
+                      <TooltipTrigger>
+                        <div className="w-20 h-20 shrink-0">
+                          <Item variant="muted" className={itemClassName}>
+                            <ItemContent className="p-0 flex items-center justify-center">
+                              <Image 
+                                src={`/assets/echoes/${e.id}.png`}
+                                alt={e.name}
+                                width={64}
+                                height={64}
+                                className="object-contain rounded-xl"
+                              />
+                            </ItemContent>
+                          </Item>
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent>{e.name}</TooltipContent>
+                    </Tooltip>
+                  ))}
+                </div>
+              </section>
+            )
+          })}
         </div>
       </div>
     </div>

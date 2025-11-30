@@ -63,7 +63,7 @@ export default function ResonatorsPage() {
   const iconCardImageClassName =
     "object-contain w-full h-full transition-transform duration-200 hover:scale-110 transform-gpu"
   const spriteCardImageClassName =
-    "object-cover w-full h-full transition-transform duration-200 scale-125 transform-gpu"
+    "object-cover w-full h-full transition-transform duration-200 scale-110 transform-gpu"
   const iconPreviewImageClassName = "rounded"
   const spritePreviewImageClassName = "rounded"
 
@@ -266,7 +266,7 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
+      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4">
         {filteredResonators.map((resonator) => {
           const hasDetailData = Boolean(
             resonator.weaponType &&
@@ -355,6 +355,12 @@ export default function ResonatorsPage() {
               </HoverCardTrigger>
               {hasDetailData && assets && (
                 <HoverCardContent side="top" className="w-fit">
+                  {/** Resolve labels so alt text is always a string */ }
+                  {(() => {
+                    const weaponTypeLabel = resonator.weaponType ?? "Weapon type"
+                    const attributeLabel = resonator.attribute ?? "Attribute"
+
+                    return (
                   <div className="flex items-center gap-4">
                     <Image
                       src={displayImage}
@@ -378,7 +384,7 @@ export default function ResonatorsPage() {
                         >
                           <Image
                             src={assets.attribute}
-                            alt={resonator.attribute}
+                            alt={attributeLabel}
                             width={20}
                             height={20}
                           />
@@ -389,7 +395,7 @@ export default function ResonatorsPage() {
                         <Badge variant="outline" className="flex gap-2 text-sm">
                           <Image
                             src={assets.weaponType}
-                            alt={resonator.weaponType}
+                            alt={weaponTypeLabel}
                             width={20}
                             height={20}
                           />
@@ -398,6 +404,8 @@ export default function ResonatorsPage() {
                       </div>
                     </div>
                   </div>
+                    )
+                  })()}
                 </HoverCardContent>
               )}
             </HoverCard>

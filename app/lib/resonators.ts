@@ -20,6 +20,21 @@ interface ResonatorStats {
   }
 }
 
+function hasCompleteStats(entry: unknown): entry is ResonatorStats {
+  if (!entry || typeof entry !== "object") return false
+  const candidate = entry as Partial<ResonatorStats>
+  const stats = candidate.stats
+  return Boolean(
+    stats &&
+    stats.hp?.min !== undefined &&
+    stats.hp?.max !== undefined &&
+    stats.atk?.min !== undefined &&
+    stats.atk?.max !== undefined &&
+    stats.def?.min !== undefined &&
+    stats.def?.max !== undefined
+  )
+}
+
 /**
  * Get all resonator IDs from the index.json file
  */
@@ -31,8 +46,9 @@ export async function getAllResonatorIds(): Promise<string[]> {
  * Get basic stats for a resonator from index.json
  */
 export async function getResonatorStats(id: string): Promise<ResonatorStats | null> {
-  const resonator = resonatorsData.resonators.find(r => r.id === id)
-  return resonator || null
+  const resonator = resonatorsData.resonators.find((r) => r.id === id)
+  if (!resonator || !hasCompleteStats(resonator)) return null
+  return resonator
 }
 
 /**

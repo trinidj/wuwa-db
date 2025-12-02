@@ -51,27 +51,20 @@ function SkillTabs({
         <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
         <TabsList className="justify-start w-fit ">
           {validItems.map((skill, index) => (
-            <Tooltip>
-              <TooltipTrigger>
-                <TabsTrigger
-                  key={toValue(skill, index)}
-                  value={toValue(skill, index)}
-                  className="flex flex-col items-center gap-2 w-fit h-fit"
-                  activeColor={activeColor}
-                >
-                  <Image
-                    alt={`${skill.type} icon`}
-                    src={skill.asset || ""}
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                  />
-                </TabsTrigger>
-              </TooltipTrigger>
-              <TooltipContent>
-                {skill.talent?.type}
-              </TooltipContent>
-            </Tooltip>
+            <TabsTrigger
+              value={toValue(skill, index)}
+              key={toValue(skill, index)}
+              className="flex flex-col items-center gap-2 w-fit h-fit"
+              activeColor={activeColor}
+            >
+              <Image
+                alt={`${skill.type} icon`}
+                src={skill.asset || ""}
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            </TabsTrigger>
           ))}
         </TabsList>
       </div>

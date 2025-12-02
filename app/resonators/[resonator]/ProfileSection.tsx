@@ -119,11 +119,18 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
                 <CardTitle>Combat Roles</CardTitle>
                 
                 <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="icon" className="cursor-pointer">
-                      <Ellipsis />
-                    </Button>
-                  </DialogTrigger>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="icon" className="cursor-pointer">
+                          <Ellipsis />
+                        </Button>
+                      </DialogTrigger>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <span>View Combat Roles</span>
+                    </TooltipContent>
+                  </Tooltip>
                   <DialogContent>
                     <DialogHeader>
                       <DialogTitle>Combat Roles</DialogTitle>
@@ -190,27 +197,35 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
         </div>
 
         {/* Right Side: Character Sprite */}
-        <Card className="p-0 w-full max-w-[440px] self-center lg:self-end">
+        <Card className="p-0 w-full max-w-[500px] self-center lg:self-end">
           <CardContent className="relative p-0 overflow-hidden">
             <Image
               alt={`${resonator.name} sprite`}
               src={assets.sprite}
-              width={696}
-              height={960}
-              className="object-cover w-full h-[460px] sm:h-[520px] lg:h-[575px] scale-110"
+              width={524}
+              height={600}
+              quality={100}
+              className="object-cover w-full h-[460px] sm:h-[520px] lg:h-[575px] scale-105"
             />
 
             <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="absolute right-2 top-2 sm:right-3 sm:top-3 z-10 cursor-pointer"
-                  size="icon"
-                  disabled={!hasSplashArt}
-                >
-                  <Expand />
-                </Button>
-              </DialogTrigger>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="absolute right-2 top-2 sm:right-3 sm:top-3 z-10 cursor-pointer"
+                      size="icon"
+                      disabled={!hasSplashArt}
+                    >
+                      <Expand />
+                    </Button>
+                  </DialogTrigger>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <span>View Splash Art</span>
+                </TooltipContent>
+              </Tooltip>
               <DialogContent className="max-w-fit sm:max-w-[90vw] lg:max-w-fit">
                 <DialogHeader>
                   <DialogTitle>{resonator.name}</DialogTitle>

@@ -2,33 +2,33 @@
 
 **Basic Attack**
 
-Perform up to 2 consecutive attacks, dealing Havoc DMG.
+- Perform up to 2 consecutive attacks, dealing Havoc DMG.
 
-Press Normal Attack shortly after casting Basic Attack Stage 2 to cast Rending Lunge.
+- Press Normal Attack shortly after casting Basic Attack Stage 2 to cast Rending Lunge.
 
 **Rending Lunge**
 
-Deal Havoc DMG.
+- Deal Havoc DMG.
 
-Press Normal Attack shortly after casting this skill on the ground to cast Death Snip.
+- Press Normal Attack shortly after casting this skill on the ground to cast Death Snip.
 
-Use Normal Attack shortly after casting this skill in mid-air to cast Hanging Finality.
+- Use Normal Attack shortly after casting this skill in mid-air to cast Hanging Finality.
 
 **Death Snip**
 
-Open the scissors, dealing Havoc DMG. After a while, the scissors snip, dealing Havoc DMG and restoring HP for all nearby Resonators in the team.
+- Open the scissors, dealing Havoc DMG. After a while, the scissors snip, dealing Havoc DMG and restoring HP for all nearby Resonators in the team.
 
-Use Normal Attack during this skill to deal additional Havoc DMG. Use Normal Attack again to immediately snip the target.
+- Use Normal Attack during this skill to deal additional Havoc DMG. Use Normal Attack again to immediately snip the target.
 
-The skill DMG is considered Resonance Liberation DMG.
+- The skill DMG is considered Resonance Liberation DMG.
 
-Press Normal Attack shortly after casting Death Snip to cast Thread Withdrawn.
+- Press Normal Attack shortly after casting Death Snip to cast Thread Withdrawn.
 
 **Thread Withdrawn**
 
-Deal Havoc DMG.
+- Deal Havoc DMG.
 
-Can trigger successful Dodges within a certain time after being cast.
+- Can trigger successful Dodges within a certain time after being cast.
 
 **Heavy Attack**
 
@@ -38,45 +38,45 @@ This skill cannot be cast while in Chainsaw Mode.
 
 Perform the following actions within a certain time after casting this skill to cast Hanging Finality:
 
-Press Normal Attack;
+- Press Normal Attack
 
-Cast Lifethread - Glide and press Normal Attack before landing.
+- Cast Lifethread - Glide and press Normal Attack before landing.
 
 Hold Normal Attack before landing after casting Heavy Attack to cast Heavy Attack - Severed Facet.
 
 **Mid-air Attack**
 
-Consume STA to perform Plunging Attack, dealing Havoc DMG.
+- Consume STA to perform Plunging Attack, dealing Havoc DMG.
 
-While not in Chainsaw Mode, press Normal Attack within a certain time after casting Mid-air Attack to cast Basic Attack Stage 2.
+- While not in Chainsaw Mode, press Normal Attack within a certain time after casting Mid-air Attack to cast Basic Attack Stage 2.
 
 **Heavy Attack - Severed Facet**
 
-Deal Havoc DMG.
+- Deal Havoc DMG.
 
-Use Normal Attack within a certain time after casting Heavy Attack - Severed Facet to cast Hanging Finality.
+- Use Normal Attack within a certain time after casting Heavy Attack - Severed Facet to cast Hanging Finality.
 
-If interrupted, Heavy Attack - Severed Facet can be cast again by holding Normal Attack before landing. This effect can be triggered once only before landing.
+- If interrupted, Heavy Attack - Severed Facet can be cast again by holding Normal Attack before landing. This effect can be triggered once only before landing.
 
 **Hanging Finality**
 
-Consume STA to perform Plunging Attack, dealing Havoc DMG.
+- Consume STA to perform Plunging Attack, dealing Havoc DMG.
 
-Press Normal Attack shortly after casting this skill on the ground to cast Death Snip.
+- Press Normal Attack shortly after casting this skill on the ground to cast Death Snip.
 
 **Dodge Counter**
 
-Press Normal Attack right after a successful Dodge to attack the target, dealing Havoc DMG.
+- Press Normal Attack right after a successful Dodge to attack the target, dealing Havoc DMG.
 
-Press Normal Attack shortly after casting this skill to cast Rending Lunge.
+- Press Normal Attack shortly after casting this skill to cast Rending Lunge.
 
 **Dodge Counter - Eye of Unraveling: Retraction**
 
 Hold Dodge after a successful Dodge on the ground to cast Dodge Counter - Eye of Unraveling: Retraction to attack and Stagnate the target, dealing Havoc DMG.
 
-While not in Chainsaw Mode, after casting this skill, Press Normal Attack on the ground or use Normal Attack in mid-air to cast Rending Lunge. This effect is removed when Chisa enters Chainsaw Mode.
+- While not in Chainsaw Mode, after casting this skill, Press Normal Attack on the ground or use Normal Attack in mid-air to cast Rending Lunge. This effect is removed when Chisa enters Chainsaw Mode.
 
-While in Chainsaw Mode, press Normal Attack shortly after casting this skill to cast Sawring - Blitz Stage 3.
+- While in Chainsaw Mode, press Normal Attack shortly after casting this skill to cast Sawring - Blitz Stage 3.
 
 ---
 

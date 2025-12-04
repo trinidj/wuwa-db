@@ -60,10 +60,6 @@ export default function ResonatorsPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [showSprites, setShowSprites] = useState(false)
 
-  const iconCardImageClassName =
-    "object-contain w-full h-full transition-transform duration-200 hover:scale-110 transform-gpu"
-  const spriteCardImageClassName =
-    "object-cover w-full h-full transition-transform duration-200 scale-110 transform-gpu"
   const iconPreviewImageClassName = "rounded"
   const spritePreviewImageClassName = "rounded"
 
@@ -266,7 +262,7 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4">
+      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
         {filteredResonators.map((resonator) => {
           const hasDetailData = Boolean(
             resonator.weaponType &&
@@ -276,40 +272,58 @@ export default function ResonatorsPage() {
             resonator.description !== "???"
           )
 
+          const iconCardImageClassName =
+            "object-contain w-full h-full"
+          const spriteCardImageClassName =
+            "object-cover w-full h-full"
+
           const assets = resonator.weaponType ? getResonatorAssets(resonator as Resonator) : undefined
           const fallbackSprite = `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/sprite.png`
           const fallbackIcon = `/assets/resonators/${resonator.rarity}_stars/${resonator.name}/icon.png`
           const displayImage = showSprites
             ? assets?.sprite ?? fallbackSprite
             : assets?.image ?? fallbackIcon
+          const attributeIcon = assets?.attribute ?? `/assets/attributes/${resonator.attribute}.png`
+          const weaponTypeIcon = assets?.weaponType ?? `/assets/weapontType/${resonator.weaponType}.png`
+
           const displayCardImageClassName = showSprites ? spriteCardImageClassName : iconCardImageClassName
           const displayPreviewImageClassName = showSprites ? spritePreviewImageClassName : iconPreviewImageClassName
-          const attributeIcon = assets?.attribute ?? `/assets/attributes/${resonator.attribute}.png`
 
           const cardContent = (
             <Card
               className={cn(
-                "transition-transform rounded-lg duration-200 border-none hover:scale-105 will-change-transform p-0 gap-0 overflow-hidden transform-gpu",
+                "transition-transform duration-300 border-none hover:scale-105 will-change-transform p-0 gap-0 overflow-hidden",
                 getRarityGradient(resonator.rarity),
                 !hasDetailData && "opacity-70 cursor-not-allowed"
               )}
               style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
             >
-              <div 
-                className="absolute left-1 top-1 z-10 transform-gpu rounded-full" 
-                style={{ 
-                  backfaceVisibility: 'hidden',
-                  borderColor: getAttributeColor(resonator.attribute),
-                  ...getAttributeBackgroundStyle(resonator.attribute, 0.5) 
-                }}
-              >
-                <Image
-                  alt="Attribute"
-                  width={24}
-                  height={24}
-                  src={attributeIcon}
+              <div className="absolute right-1 top-1 z-10 transform-gpu bg-accent p-1 rounded-full">
+                <div 
+                  className="rounded-full" 
+                  style={{ 
+                    backfaceVisibility: 'hidden',
+                    borderColor: getAttributeColor(resonator.attribute),
+                    ...getAttributeBackgroundStyle(resonator.attribute, 0.5) 
+                  }}
+                >
+                  <Image
+                    alt="Attribute"
+                    width={25}
+                    height={25}
+                    src={attributeIcon}
+                  />
+                </div>
+
+                <Image 
+                  alt="Weapon Type"
+                  width={25}
+                  height={25}
+                  src={weaponTypeIcon}
+                  className="mt-2"
                 />
               </div>
+
               {resonator.isNew && (
                 <div className="absolute right-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
                   <Badge className="text-white text-xs bg-red-600/80 ">
@@ -318,9 +332,9 @@ export default function ResonatorsPage() {
                 </div>
               )}
               {!hasDetailData && (
-                <div className="absolute right-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
+                <div className="absolute left-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
                   <Badge variant="outline" className="bg-background/80 text-xs">
-                    Data coming soon
+                    Unavailable
                   </Badge>
                 </div>
               )}
@@ -332,9 +346,7 @@ export default function ResonatorsPage() {
                 className={displayCardImageClassName}
                 style={{ backfaceVisibility: 'hidden' }}
               />
-              <div
-                className="text-center w-4/5 px-4 rounded-xl absolute bottom-2 left-1/2 -translate-x-1/2 bg-accent/75"
-              >
+              <div className="bg-accent/80 w-full border-t-4 border-rarity-5 p-2 text-center">
                 <CardTitle className="text-sm">{resonator.name}</CardTitle>
               </div>
             </Card>

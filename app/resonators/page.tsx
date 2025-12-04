@@ -310,16 +310,16 @@ export default function ResonatorsPage() {
                 >
                   <Image
                     alt="Attribute"
-                    width={25}
-                    height={25}
+                    width={20}
+                    height={20}
                     src={attributeIcon}
                   />
                 </div>
 
                 <Image 
                   alt="Weapon Type"
-                  width={25}
-                  height={25}
+                  width={20}
+                  height={20}
                   src={weaponTypeIcon}
                   className="mt-2"
                 />

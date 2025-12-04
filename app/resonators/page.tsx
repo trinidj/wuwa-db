@@ -113,9 +113,9 @@ export default function ResonatorsPage() {
 
   const getRarityGradient = (rarity: number) => {
     if (rarity === 5) {
-      return 'bg-gradient-to-t from-rarity-5 via-rarity-5/10 to-transparent'
+      return 'bg-gradient-to-t from-rarity-5 via-rarity-5/30'
     }
-    return 'bg-gradient-to-t from-rarity-4 via-rarity-4/10 to-transparent'
+    return 'bg-gradient-to-t from-rarity-4 via-rarity-4/30'
   }
 
   return (
@@ -262,7 +262,7 @@ export default function ResonatorsPage() {
         </div>
       </header>
 
-      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+      <main className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6">
         {filteredResonators.map((resonator) => {
           const hasDetailData = Boolean(
             resonator.weaponType &&
@@ -292,8 +292,7 @@ export default function ResonatorsPage() {
           const cardContent = (
             <Card
               className={cn(
-                "transition-transform duration-300 border-none hover:scale-105 will-change-transform p-0 gap-0 overflow-hidden",
-                getRarityGradient(resonator.rarity),
+                "gap-0 p-0 border-none rounded-sm overflow-hidden transition-transform will-change-transform duration-300 hover:scale-110",
                 !hasDetailData && "opacity-70 cursor-not-allowed"
               )}
               style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
@@ -325,7 +324,7 @@ export default function ResonatorsPage() {
               </div>
 
               {resonator.isNew && (
-                <div className="absolute right-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
+                <div className="absolute left-1 top-1 z-10 transform-gpu" style={{ backfaceVisibility: 'hidden' }}>
                   <Badge className="text-white text-xs bg-red-600/80 ">
                     New
                   </Badge>
@@ -338,15 +337,20 @@ export default function ResonatorsPage() {
                   </Badge>
                 </div>
               )}
-              <Image
-                alt={resonator.name}
-                src={displayImage}
-                width={200}
-                height={200}
-                className={displayCardImageClassName}
-                style={{ backfaceVisibility: 'hidden' }}
-              />
-              <div className="bg-accent/80 w-full border-t-4 border-rarity-5 p-2 text-center">
+              <div 
+                className={cn(
+                  getRarityGradient(resonator.rarity)
+                )}>
+                <Image
+                  alt={resonator.name}
+                  src={displayImage}
+                  width={200}
+                  height={200}
+                  className={cn("block", displayCardImageClassName)}
+                  style={{ backfaceVisibility: "hidden" }}
+                />
+              </div>
+              <div className="bg-accent/90 p-1 text-center border-t-2 border-t-rarity-5">
                 <CardTitle className="text-sm">{resonator.name}</CardTitle>
               </div>
             </Card>

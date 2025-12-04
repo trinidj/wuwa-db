@@ -41,7 +41,7 @@ export function SearchDialogContent({ resonators }: SearchDialogContentProps) {
     <>
       <InputGroup>
         <InputGroupInput
-          placeholder="Search by name, attribute, weapon, or description..."
+          placeholder="Search..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           autoFocus
@@ -61,7 +61,7 @@ export function SearchDialogContent({ resonators }: SearchDialogContentProps) {
 
         {!query && (
           <div className="py-8 text-center text-sm text-muted-foreground">
-            Start typing to search for resonators...
+            Start typing to search...
           </div>
         )}
 

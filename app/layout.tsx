@@ -1,30 +1,32 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Search } from "lucide-react";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider"
-import { SearchDialogContent } from "@/components/search-dialog-content"
-import resonatorsData from "@/app/data/resonators/index.json"
-import { Resonator } from "@/app/types/resonator"
-import { Button } from "@/components/ui/button"
-import Link from "next/link";
-import Image from "next/image";
+import NavBar from "@/components/nav-bar";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+// import { SearchDialogContent } from "@/components/search-dialog-content"
+// import resonatorsData from "@/app/data/resonators/index.json"
+// import { Resonator } from "@/app/types/resonator"
+// import { Button } from "@/components/ui/button"
+// import Link from "next/link";
+// import Image from "next/image";
+// import { useIsMobile } from "@/hooks/use-mobile";
 
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu"
+// import {
+//   Dialog,
+//   DialogContent,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+// } from "@/components/ui/dialog"
+
+// import {
+//   NavigationMenu,
+//   NavigationMenuItem,
+//   NavigationMenuLink,
+//   NavigationMenuList,
+// } from "@/components/ui/navigation-menu"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,29 +43,6 @@ export const metadata: Metadata = {
   description: "Wuwa Database",
 };
 
-const components: { title: string; url: string; icon: string; }[] = [
-  {
-    title: "Home",
-    url: "/",
-    icon: "/assets/home_icon.png"
-  },
-  {
-    title: "Resonators",
-    url: "/resonators",
-    icon: "/assets/resonators_icon.png"
-  },
-  {
-    title: "Weapons",
-    url: "/weapons",
-    icon: "/assets/weapons_icon.png"
-  },
-  {
-    title: "Echoes",
-    url: "/echoes",
-    icon: "/assets/echoes_icon.png"
-  }
-]
-
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {  
   return (
     <html lang="en" suppressHydrationWarning>
@@ -75,60 +54,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           forcedTheme="dark"
           disableTransitionOnChange
         >
-          <header className="bg-card h-15 flex items-center justify-center px-80 border-b-2 border-rarity-5/30">
-            <nav className="flex w-full items-center justify-between gap-6">
-              <div className="shrink-0">
-                <Image 
-                  src="/assets/site_icon.png"
-                  alt="Site Icon"
-                  width={48}
-                  height={48}
-                  quality={100}
-                />
-              </div>
-
-              <div className="flex-1 flex justify-center">
-                <NavigationMenu>
-                  <NavigationMenuList className="gap-3">
-                    {components.map((component) => (
-                      <NavigationMenuItem key={component.title}>
-                        <NavigationMenuLink asChild>
-                          <div className="flex flex-row items-center gap-2">
-                            <Image 
-                              src={component.icon}
-                              alt={`${component.title} Icon`}
-                              width={24}
-                              height={24}
-                              quality={100}
-                            />
-
-                            <Link href={component.url}>
-                              <span className="font-medium">{component.title}</span>
-                            </Link>
-                          </div>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </div>
-
-              <div className="shrink-0">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Search />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>Search Resonators</DialogTitle>
-                    </DialogHeader>
-                    <SearchDialogContent resonators={resonatorsData.resonators as Resonator[]} />
-                  </DialogContent>
-                </Dialog>
-              </div>
-            </nav>
+          <header className="bg-card h-15 flex items-center justify-center border-b-2 border-rarity-5/30 px-80">
+            <NavBar />
           </header>
 
           <main className="py-6 px-4 sm:py-12 sm:px-8 md:px-16 lg:px-32 xl:py-20 xl:px-80">

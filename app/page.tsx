@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-20 px-4 py-12 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-16 px-4 py-12 text-center sm:px-6 lg:px-10">
         <header className="flex flex-col items-center gap-6">
           <div className="rounded-full bg-muted/60 p-3 shadow-sm">
             <Image
@@ -51,23 +51,23 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex justify-center w-full max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <main className="grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {sections.map((section) => (
             <Link
               key={section.href}
               href={section.href}
-              className="group size-40 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="group block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <Card className="items-center text-center transition p-4 hover:-translate-y-1 hover:shadow-md">
-                <CardContent className="flex flex-col items-center gap-3 p-0">
+              <Card className="flex h-full min-h-[10rem] items-center justify-center p-6 text-center transition hover:-translate-y-1 hover:shadow-lg">
+                <CardContent className="flex flex-col items-center gap-4 p-0">
                   <Image
                     src={section.icon}
                     alt={section.alt}
                     width={64}
                     height={64}
-                    className="object-contain"
+                    className="h-16 w-16 object-contain sm:h-20 sm:w-20"
                   />
-                  <CardTitle className="text-lg font-semibold w-40">
+                  <CardTitle className="text-lg font-semibold sm:text-xl">
                     {section.title}
                   </CardTitle>
                 </CardContent>

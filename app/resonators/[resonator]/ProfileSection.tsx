@@ -76,32 +76,15 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
     return `/assets/combat_roles/${slug}.png`
   }
 
-  const details: InfoConfig[] = useMemo(() => [
-    {
-      label: "Nation",
-      value: resonator.nation
-    },
-    {
-      label: "Version Release",
-      value: resonator.versionRelease
-    },
-    {
-      label: "English VA",
-      value: resonator.voiceActors.english
-    },
-    {
-      label: "Chinese VA",
-      value: resonator.voiceActors.chinese
-    },
-    {
-      label: "Japanese VA",
-      value: resonator.voiceActors.japanese
-    },
-    {
-      label: "Korean VA",
-      value: resonator.voiceActors.korean
-    }
-  ], [resonator.nation, resonator.versionRelease, resonator.voiceActors.english, resonator.voiceActors.chinese, resonator.voiceActors.japanese, resonator.voiceActors.korean])
+  const voiceActors = resonator.voiceActors ?? {};
+  const details: InfoConfig[] = [
+    { label: "Nation", value: resonator.nation ?? "—" },
+    { label: "Version Release", value: resonator.versionRelease ?? "TBD" },
+    { label: "English VA", value: voiceActors.english ?? "TBD" },
+    { label: "Chinese VA", value: voiceActors.chinese ?? "TBD" },
+    { label: "Japanese VA", value: voiceActors.japanese ?? "TBD" },
+    { label: "Korean VA", value: voiceActors.korean ?? "TBD" },
+  ].filter(({ value }) => value !== undefined && value !== null && value !== "");
 
   return (
     <>

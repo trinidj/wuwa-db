@@ -41,8 +41,8 @@ type Echo = {
 
 type EchoCostKey = "cost_4" | "cost_3" | "cost_1"
 
-const echoSections: { key: EchoCostKey; label: string; padded?: boolean }[] = [
-  { key: "cost_4", label: "4-Cost", padded: true },
+const echoSections: { key: EchoCostKey; label: string; }[] = [
+  { key: "cost_4", label: "4-Cost" },
   { key: "cost_3", label: "3-Cost" },
   { key: "cost_1", label: "1-Cost" },
 ]
@@ -124,7 +124,7 @@ export default function EchoesExplorer({
               </Card>
 
               <div className="space-y-3">
-                {echoSections.map(({ key, label, padded }) => {
+                {echoSections.map(({ key, label }) => {
                   const list = echoesByRarity[key]
 
                   return (

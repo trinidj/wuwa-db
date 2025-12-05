@@ -65,7 +65,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
     <>
       <section
         id="profile"
-        className="flex flex-col gap-6 lg:flex-row lg:gap-6 lg:justify-between lg:px-6"
+        className="flex flex-col gap-6 lg:flex-row lg:gap-6 lg:justify-between"
       >
         {/* Left Side: Profile Info */}
         <div className="flex flex-1 h-full flex-col gap-6 lg:gap-8">

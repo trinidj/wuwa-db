@@ -263,7 +263,7 @@
         "id": "calcified_junrock",
         "name": "Calcified Junrock",
         "sonataIds": ["tidebreaking_courage", "empyrean_anthem", "crown_of_valor"],
-        "icon": "/assets/echoes/calcified_junrock"
+        "icon": "/assets/echoes/calcified_junrock.png"
       },
       {
         "id": "aero_prism",

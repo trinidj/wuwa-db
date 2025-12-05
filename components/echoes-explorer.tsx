@@ -17,6 +17,13 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 type Sonata = {
   id: string
   name: string
@@ -68,19 +75,14 @@ export default function EchoesExplorer({
               <TooltipTrigger asChild>
                 <TabsTrigger
                   value={sonata.id}
-                  className="flex-row p-0 cursor-pointer transition-all duration-150 hover:border-2 hover:border-rarity-5/50"
+                  className="relative size-10 flex-wrap border-2 border-muted cursor-pointer transition-all duration-150 hover:border-2 hover:border-rarity-5/50"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="relative size-10 overflow-hidden rounded-md border bg-card">
-                      <Image
-                        src={sonata.icon}
-                        alt={sonata.name}
-                        fill
-                        sizes="40px"
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
+                  <Image
+                    src={sonata.icon}
+                    alt={sonata.name}
+                    fill
+                    className="object-contain"
+                  />
                 </TabsTrigger>
               </TooltipTrigger>
               <TooltipContent side="bottom">
@@ -100,69 +102,63 @@ export default function EchoesExplorer({
 
           return (
             <TabsContent key={sonata.id} value={sonata.id} className="space-y-4">
-              <div className="rounded-xl border bg-card p-4 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-md border bg-background">
-                    <Image
-                      src={sonata.icon}
-                      alt={sonata.name}
-                      fill
-                      sizes="48px"
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-lg font-semibold leading-tight">{sonata.name}</p>
-                    <p className="text-sm text-muted-foreground">Sonata effect</p>
-                  </div>
-                </div>
+              <Card>
+                <CardHeader className="gap-0">
+                  <div className="flex items-center gap-2">
+                    <div className="border-2 border-rarity-5/50 rounded-sm">
+                      <Image 
+                        src={sonata.icon}
+                        alt={`${sonata.name} Icon`}
+                        width={48}
+                        height={48}
+                        quality={100}
+                      />
+                    </div>
 
-                <div className="mt-3 space-y-1">
+                    <CardTitle>{sonata.name}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
                   {renderSonataDescription(sonata.description)}
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
               <div className="space-y-3">
                 {echoSections.map(({ key, label, padded }) => {
                   const list = echoesByRarity[key]
-                  const gridCols = padded ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-3 lg:grid-cols-4"
 
                   return (
-                    <div key={key} className="rounded-xl border bg-muted/30">
-                      <div className="flex items-center justify-between border-b px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-semibold">{label}</span>
-                          <span className="text-xs text-muted-foreground">{list.length} echoes</span>
-                        </div>
-                      </div>
-
-                      <div className={`grid gap-3 p-4 ${gridCols}`}>
+                    <Card key={key}>
+                      <CardHeader className="gap-0">
+                        <CardTitle className="bg-accent border-2 border-rarity-5/50 rounded-sm w-fit p-2">{label}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex flex-wrap gap-4">
                         {list.length > 0 ? (
                           list.map((echo) => (
-                            <div
-                              key={echo.id}
-                              className="flex items-center gap-3 rounded-lg border bg-background/80 p-3 shadow-sm"
-                            >
-                              <div className="relative h-12 w-12 overflow-hidden rounded-md border bg-card">
-                                <Image
-                                  src={getEchoIcon(echo)}
-                                  alt={echo.name}
-                                  fill
-                                  sizes="48px"
-                                  className="object-contain"
-                                />
-                              </div>
-
-                              <span className="text-sm font-semibold leading-tight">{echo.name}</span>
-                            </div>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <div className="relative overflow-hidden rounded-md bg-linear-to-t from-rarity-5 via-rarity-5/30">
+                                  <Image
+                                    src={getEchoIcon(echo)}
+                                    alt={echo.name}
+                                    width={64}
+                                    height={64}
+                                    className="object-contain"
+                                  />
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                {echo.name}
+                              </TooltipContent>
+                            </Tooltip>
                           ))
                         ) : (
                           <p className="col-span-full text-sm text-muted-foreground">
                             No echoes found for this cost.
                           </p>
                         )}
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   )
                 })}
               </div>

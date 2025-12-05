@@ -24,13 +24,26 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+} from "@/components/ui/table"
+
 import combatRolesData from "@/app/data/combat_roles.json"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Separator } from "@/components/ui/separator"
 import { Label } from "@/components/ui/label"
+import { useMemo } from "react"
 
 interface ProfileSectionProps {
   resonator: Resonator
+}
+
+interface InfoConfig {
+  label: string
+  value: string | number
 }
 
 export default function ProfileSection({ resonator }: ProfileSectionProps) {
@@ -63,6 +76,33 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
     return `/assets/combat_roles/${slug}.png`
   }
 
+  const details: InfoConfig[] = useMemo(() => [
+    {
+      label: "Nation",
+      value: resonator.nation
+    },
+    {
+      label: "Version Release",
+      value: resonator.versionRelease
+    },
+    {
+      label: "English VA",
+      value: resonator.voiceActors.english
+    },
+    {
+      label: "Chinese VA",
+      value: resonator.voiceActors.chinese
+    },
+    {
+      label: "Japanese VA",
+      value: resonator.voiceActors.japanese
+    },
+    {
+      label: "Korean VA",
+      value: resonator.voiceActors.korean
+    }
+  ], [resonator.nation, resonator.versionRelease, resonator.voiceActors.english, resonator.voiceActors.chinese, resonator.voiceActors.japanese, resonator.voiceActors.korean])
+
   return (
     <>
       <section
@@ -70,7 +110,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
         className="flex flex-col gap-6 lg:flex-row lg:gap-8 lg:justify-between"
       >
         {/* Left Side: Profile Info */}
-        <div className="flex flex-1 h-full flex-col gap-6 lg:gap-6 min-w-0">
+        <div className="flex flex-1 h-full flex-col gap-6 lg:gap-8 min-w-0">
           <Card className="px-4 sm:px-6">
             <CardHeader className="px-0">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -217,53 +257,75 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
         </div>
 
         {/* Right Side: Character Sprite */}
-        <Card className="p-0 w-full max-w-[500px] h-full self-stretch mx-auto lg:mx-0">
-          <CardContent className="relative p-0 overflow-hidden">
-            <Image
-              alt={`${resonator.name} sprite`}
-              src={assets.sprite}
-              width={524}
-              height={600}
-              quality={100}
-              className="object-cover w-full h-80 sm:h-[440px] lg:h-[575px]"
-            />
+        <div className="flex flex-col gap-4">
+          <Card className="p-0 w-full max-w-[500px] h-full self-stretch mx-auto lg:mx-0 gap-0">
+            <CardContent className="relative p-0 overflow-hidden">
+              <Image
+                alt={`${resonator.name} sprite`}
+                src={assets.sprite}
+                width={524}
+                height={600}
+                quality={100}
+                className="object-cover w-full h-80 sm:h-[440px] lg:h-[575px]"
+              />
 
-            <Dialog>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className="absolute right-2 top-2 sm:right-3 sm:top-3 z-10 cursor-pointer"
-                      size="icon"
-                      disabled={!hasSplashArt}
-                    >
-                      <Expand />
-                    </Button>
-                  </DialogTrigger>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <span>View Splash Art</span>
-                </TooltipContent>
-              </Tooltip>
-              <DialogContent className="max-w-[95vw] sm:max-w-[90vw] lg:max-w-fit">
-                <DialogHeader>
-                  <DialogTitle>{resonator.name}</DialogTitle>
-                </DialogHeader>
-                <Skeleton className="max-h-[75vh] w-full sm:w-auto object-contain" />
-                <Image
-                  src={splashArt}
-                  alt={`${resonator.name} splash art`}
-                  width={2840}
-                  height={1873}
-                  quality={100}
-                  loading="lazy"
-                  className="max-h-[75vh] w-full sm:w-auto object-contain"
-                />
-              </DialogContent>
-            </Dialog>
-          </CardContent>
-        </Card>
+              <Dialog>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className="absolute right-2 top-2 sm:right-3 sm:top-3 z-10 cursor-pointer"
+                        size="icon"
+                        disabled={!hasSplashArt}
+                      >
+                        <Expand />
+                      </Button>
+                    </DialogTrigger>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <span>View Splash Art</span>
+                  </TooltipContent>
+                </Tooltip>
+                <DialogContent className="max-w-[95vw] sm:max-w-[90vw] lg:max-w-fit">
+                  <DialogHeader>
+                    <DialogTitle>{resonator.name}</DialogTitle>
+                  </DialogHeader>
+                  <Skeleton className="max-h-[75vh] w-full sm:w-auto object-contain" />
+                  <Image
+                    src={splashArt}
+                    alt={`${resonator.name} splash art`}
+                    width={2840}
+                    height={1873}
+                    quality={100}
+                    loading="lazy"
+                    className="max-h-[75vh] w-full sm:w-auto object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
+            </CardContent>
+          </Card>
+
+          <div className="w-full">
+            <Table className="bg-accent rounded-sm overflow-hidden w-full text-sm sm:text-base">
+              <TableBody>
+                {details.map((detail) => (
+                  <TableRow
+                    key={detail.label}
+                    className="grid grid-cols-2 items-center gap-2 sm:table-row sm:gap-0"
+                  >
+                    <TableCell className="font-medium p-3 sm:p-4 sm:table-cell">
+                      {detail.label}
+                    </TableCell>
+                    <TableCell className="font-medium text-left sm:text-right p-3 sm:p-4 sm:table-cell">
+                      {detail.value}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
       </section>
     </>
   )

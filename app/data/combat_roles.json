@@ -127,6 +127,22 @@
     {
       "name": "Vibration Strength Reduction",
       "description": "Reduce the Vibration Strength of targets more effectively"
+    },
+    {
+      "name": "Tune Rupture Response",
+      "description": "???"
+    },
+    {
+      "name": "Tune Break Boost",
+      "description": "???"
+    },
+    {
+      "name": "Tune Strain Response",
+      "description": "???"
+    },
+    {
+      "name": "Off-Tune Build up Efficiency",
+      "description": "???"
     }
   ]
 }

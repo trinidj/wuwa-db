@@ -46,7 +46,16 @@ import { ATTRIBUTES, WEAPON_TYPES, RARITIES } from "@/app/lib/constants"
 import Image from "next/image"
 import Link from "next/link"
 
-type ResonatorIndexEntry = Omit<Resonator, "weaponType" | "stats" | "combatRoles"> & {
+type ResonatorIndexEntry = {
+  id: string
+  name: string
+  rarity: Resonator["rarity"]
+  attribute: Resonator["attribute"]
+  description: string
+  isNew?: boolean
+  nation?: Resonator["nation"]
+  voiceActors?: Resonator["voiceActors"]
+  versionRelease?: Resonator["versionRelease"]
   weaponType?: Resonator["weaponType"]
   stats?: Resonator["stats"]
   combatRoles?: Resonator["combatRoles"] | string
@@ -68,7 +77,9 @@ export default function ResonatorsPage() {
   const [tempWeaponTypes, setTempWeaponTypes] = useState<string[]>([])
   const [tempRarities, setTempRarities] = useState<string[]>([])
 
-  const resonators = resonatorsData.resonators as ResonatorIndexEntry[]
+  const resonators = Array.isArray(resonatorsData.resonators)
+    ? (resonatorsData.resonators as ResonatorIndexEntry[])
+    : []
 
   // Filter resonators based on search query and filters
   const filteredResonators = resonators.filter((resonator) => {

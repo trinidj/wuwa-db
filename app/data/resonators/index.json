@@ -13,6 +13,14 @@
         "hp": { "min": 824, "max": 10300 },
         "atk": { "min": 37, "max": 463 },
         "def": { "min": 91, "max": 1112 }
+      },
+      "nation": "Rinascita",
+      "versionRelease": 2.6,
+      "voiceActors": {
+        "english": "Alix Wilton Regan",
+        "chinese": "Mu Xueting",
+        "japanese": "Hikasa Yōko",
+        "korean": "Lee Ji-hyun"
       }
     },
     {

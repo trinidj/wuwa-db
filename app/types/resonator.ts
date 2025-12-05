@@ -62,6 +62,14 @@ export interface Resonator {
     atk: StatRange;
     def: StatRange;
   };
+  nation: string;
+  versionRelease: number,
+  voiceActors: {
+    english: string;
+    chinese: string;
+    japanese: string;
+    korean: string;
+  }
   talents?: {
     normalAttack?: Talent;
     resonanceSkill?: Talent;

@@ -6,8 +6,8 @@ import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Label } from "@/components/ui/label"
 import { getAttributeColor } from "@/lib/utils"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 interface SkillItem {
   type: string
@@ -42,7 +42,7 @@ function SkillTabs({
     <Tabs defaultValue={defaultValue} className="space-y-3 sm:space-y-4">
       <div className="flex flex-col gap-2">
         <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
-        <TabsList className="justify-start w-fit ">
+        <TabsList className="justify-start w-fit p-0">
           {validItems.map((skill, index) => (
             <TabsTrigger
               value={toValue(skill, index)}
@@ -68,7 +68,6 @@ function SkillTabs({
           value={toValue(skill, index)}
           className="space-y-2 sm:space-y-3"
         >
-          <Label className="text-base sm:text-xl font-semibold italic">{skill.talent?.type} - {skill.talent?.name}</Label>
           <div className="text-sm sm:text-base space-y-2 sm:space-y-3">
             {renderDescription(skill.talent?.description)}
           </div>
@@ -117,15 +116,21 @@ export default function TalentsSection({ talents, resonatorName, resonatorRarity
 
   return (
     <section id="skills">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Skills & Talents</h2>
-
-      <div className="flex flex-col gap-8">
-        <SkillTabs title="Active Skills" items={skillItems} activeColor={attributeColor} />
+      <Card className="px-6">
+        <CardHeader className="gap-0 px-0">
+          <CardTitle className="text-xl sm:text-2xl font-bold">Forte Skills</CardTitle>
+        </CardHeader>
         <Separator />
-        <SkillTabs title="Inherent Skills" items={inheritSkillItems} activeColor={attributeColor} />
-        <Separator />
-        <SkillTabs title="Concerto Skills" items={concertoSkillItems} activeColor={attributeColor} />
-      </div>
+        <CardContent className="px-0">
+          <div className="flex flex-col gap-8">
+            <SkillTabs title="Active Skills" items={skillItems} activeColor={attributeColor} />
+            <Separator />
+            <SkillTabs title="Inherent Skills" items={inheritSkillItems} activeColor={attributeColor} />
+            <Separator />
+            <SkillTabs title="Concerto Skills" items={concertoSkillItems} activeColor={attributeColor} />
+          </div>
+        </CardContent>
+      </Card>
     </section>
   )
 }

@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import { Resonator, getResonatorAssets } from "@/app/types/resonator"
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { getAttributeColor, getAttributeBackgroundStyle } from "@/lib/utils"
 import { Expand, Ellipsis } from "lucide-react"
 
@@ -71,7 +71,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
         <div className="flex flex-1 h-full flex-col gap-6 lg:gap-8">
           <Card className="px-6">
             <CardHeader className="px-0">
-              <div className="flex items-center justify-between">
+              <div className="flex justify-between gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div
                     className="rounded-lg p-1 border-2"
@@ -91,14 +91,14 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <h1 className="font-bold text-2xl sm:text-3xl">{resonator.name}</h1>
-                    <p className="text-muted-foreground font-medium text-sm sm:text-base">
+                    <CardTitle className="font-bold text-2xl sm:text-3xl">{resonator.name}</CardTitle>
+                    <CardDescription className="text-muted-foreground font-medium text-sm sm:text-base">
                       {resonator.description}
-                    </p>
+                    </CardDescription>
                   </div>
                 </div>
 
-                <div className="w-full sm:w-40 flex justify-start sm:justify-end items-center">
+                <div className="w-30 sm:w-40 flex justify-start sm:justify-end items-center">
                   <Image
                     alt={`${resonator.rarity}-star`}
                     src={`/assets/rarity/${resonator.rarity}_star.png`}
@@ -113,7 +113,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
             <Separator/>
             <CardContent className="px-0">
               {resonator.combatRoles?.length ? (
-                <div className="flex items-center justify-between">
+                <div className="flex justify-between gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <ul className="flex flex-wrap items-center gap-3 sm:gap-2">
                     {resonator.combatRoles.map((role) => {
                       return (
@@ -210,7 +210,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
               width={524}
               height={600}
               quality={100}
-              className="object-cover w-full h-[460px] sm:h-[520px] lg:h-[575px] scale-105"
+              className="object-cover w-full h-[360px] sm:h-[460px] lg:h-[575px] scale-105"
             />
 
             <Dialog>

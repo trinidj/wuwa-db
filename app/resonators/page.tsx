@@ -126,17 +126,19 @@ export default function ResonatorsPage() {
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg">Browse all Resonators in Wuthering Waves</p>
         </div>
 
-        <div className="flex gap-2 sm:flex-row">
-          <InputGroup>
-            <InputGroupInput
-              placeholder="Search Resonator..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <InputGroupAddon>
-              <Search />
-            </InputGroupAddon>
-          </InputGroup>
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div className="w-full sm:flex-1">
+            <InputGroup>
+              <InputGroupInput
+                placeholder="Search Resonator..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <InputGroupAddon>
+                <Search />
+              </InputGroupAddon>
+            </InputGroup>
+          </div>
 
           <Dialog open={isFilterOpen} onOpenChange={handleOpenChange}>
             <DialogTrigger asChild>

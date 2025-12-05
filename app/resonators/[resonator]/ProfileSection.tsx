@@ -74,7 +74,7 @@ export default function ProfileSection({ resonator }: ProfileSectionProps) {
           <Card className="px-4 sm:px-6">
             <CardHeader className="px-0">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-center gap-3 sm:gap-4">
+                <div className="flex flex-col items-center text-center gap-3 sm:gap-4 md:flex-row md:text-left lg:flex-row">
                   <div
                     className="rounded-lg p-1 border-2"
                     style={{
